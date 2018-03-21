@@ -1,0 +1,115 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170725160444
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7952
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\25Jul2017 0404PM.txt
+ Windows Powershell | MSS IT
+PS C:\> cd C:\Users\aaron\Documents\WindowsPowerShell\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:59 char:1
++ }
++ ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:59 char:1
++ }
++ ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+New-PSSession : [MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot 
+complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the 
+network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By 
+default, the WinRM firewall exception for public profiles limits access to remote computers within the same local 
+subnet. For more information, see the about_Remote_Troubleshooting Help topic.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:73 char:1
++ New-PSSession -ComputerName $Computer -Credential $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionOpenFailed
+New-PSSession : [MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot
+complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the
+network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By
+default, the WinRM firewall exception for public profiles limits access to remote computers within the same local
+subnet. For more information, see the about_Remote_Troubleshooting Help topic.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:73 char:1
++ New-PSSession -ComputerName $Computer -Credential $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotin
+   gTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionOpenFailed
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+New-PSSession : [MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot 
+complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the 
+network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By 
+default, the WinRM firewall exception for public profiles limits access to remote computers within the same local 
+subnet. For more information, see the about_Remote_Troubleshooting Help topic.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:74 char:1
++ New-PSSession -ComputerName $Computer -Credential $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionOpenFailed
+New-PSSession : [MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot
+complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the
+network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By
+default, the WinRM firewall exception for public profiles limits access to remote computers within the same local
+subnet. For more information, see the about_Remote_Troubleshooting Help topic.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:74 char:1
++ New-PSSession -ComputerName $Computer -Credential $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotin
+   gTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionOpenFailed
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> ping mssdt03
+
+Pinging mssdt03.mss.local [192.168.1.117] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 192.168.1.117:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> ping mssdt03
+
+Pinging mssdt03.mss.local [192.168.1.117] with 32 bytes of data:
+Control-C
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> ping 192.168.1.117
+
+Pinging 192.168.1.117 with 32 bytes of data:
+Request timed out.
+
+Ping statistics for 192.168.1.117:
+    Packets: Sent = 1, Received = 0, Lost = 1 (100% loss),
+Control-C
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> exit
+**********************
+Windows PowerShell transcript end
+End time: 20170725160947
+**********************

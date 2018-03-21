@@ -1,0 +1,43 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170711135535
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 9292
+PSVersion: 5.1.14393.1358
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1358
+BuildVersion: 10.0.14393.1358
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\11Jul2017 0155PM.txt
+PS C:\> $UserCredential = Get-Credential
+PS C:\> $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+
+New-PSSession : [outlook.office365.com] Connecting to remote server outlook.office365.com failed with the following 
+error message : 
+[ClientAccessServer=MEXPR01CA0084,BackEndServer=,RequestId=e22f550c-b1c5-4ba5-8829-b02ecd2f0a16,TimeStamp=7/11/2017 
+5:57:01 AM] [FailureCategory=Cafe-HttpProxyException] Failed to resolve tenant name from SMTP address 
+'mss@carerswa.com.au'. For more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:12
++ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -Conne ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : -2144108477,PSSessionOpenFailed
+New-PSSession : [outlook.office365.com] Connecting to remote server outlook.office365.com failed with the following
+error message :
+[ClientAccessServer=MEXPR01CA0084,BackEndServer=,RequestId=e22f550c-b1c5-4ba5-8829-b02ecd2f0a16,TimeStamp=7/11/2017
+5:57:01 AM] [FailureCategory=Cafe-HttpProxyException] Failed to resolve tenant name from SMTP address
+'mss@carerswa.com.au'. For more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:12
++ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -Conne ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotin
+   gTransportException
+    + FullyQualifiedErrorId : -2144108477,PSSessionOpenFailed

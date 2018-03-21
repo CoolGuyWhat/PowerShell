@@ -1,0 +1,159 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728094447
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11280
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 0944AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+$Session = New-PSSession -ComputerName $Computer -Credential $Credential
+$Scipt = { Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress }
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock $Script
+>> TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Invoke-Command : Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for 
+the argument, and then try running the command again.
+At line:1 char:47
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                                               ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for
+the argument, and then try running the command again.
+At line:1 char:47
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                                               ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock {$Script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock {$Script} -AsJob
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Job2            RemoteJob       Completed     True            MSSFS01              $Script
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> get-Job | Format-list -Property *
+
+
+State         : Completed
+HasMoreData   : True
+StatusMessage :
+Location      : MSSFS01
+Command       : $Script
+JobStateInfo  : Completed
+Finished      : System.Threading.ManualResetEvent
+InstanceId    : c5a69f45-b4ad-4e93-b967-98fdafec8571
+Id            : 2
+Name          : Job2
+ChildJobs     : {Job3}
+PSBeginTime   : 28/07/2017 9:46:50 AM
+PSEndTime     : 28/07/2017 9:46:50 AM
+PSJobTypeName : RemoteJob
+Output        : {}
+Error         : {}
+Progress      : {}
+Verbose       : {}
+Debug         : {}
+Warning       : {}
+Information   : {}
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -ComputerName MSSFS01 -ScriptBlock {$script}
+[MSSFS01] Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSFS01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+[MSSFS01] Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For more
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSFS01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -ComputerName MSSFS01 -Credential $Credential -ScriptBlock {$script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -ComputerName MSSDT04 -Credential $Credential -ScriptBlock {$script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = hostname
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -ComputerName MSSDT04 -Credential $Credential -ScriptBlock {$Script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> get-Variable
+
+Name                           Value
+----                           -----
+$                              }
+?                              True
+^                              Invoke-Command
+args                           {}
+Computer                       MSSFS01
+ConfirmPreference              High
+ConsoleFileName
+Credential                     System.Management.Automation.PSCredential
+DebugPreference                SilentlyContinue
+Error                          {[MSSFS01] Connecting to remote server MSSFS01 failed with the following error messag...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\aaron
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+LASTEXITCODE                   0
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+PID                            11280
+PROFILE                        C:\Users\aaron\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath
+PSCulture                      en-AU
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\Users\aaron\Documents\WindowsPowerShell
+Scipt                           Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $n...
+Script                         MSSDT04
+Session                        [PSSession]WinRM1
+ShellId                        Microsoft.PowerShell
+StackTrace                        at System.Management.Automation.ValidateNotNullAttribute.Validate(Object arguments...
+TimeStamp                      28Jul2017 0944AM
+true                           True
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+

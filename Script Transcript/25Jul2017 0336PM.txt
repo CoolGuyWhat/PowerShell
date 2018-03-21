@@ -1,0 +1,33 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170725153602
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8256
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\25Jul2017 0336PM.txt
+Windows : The term 'Windows' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\aaron\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:11 char:1
++ Windows Powershell | MSS IT
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Windows:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Windows : The term 'Windows' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\aaron\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:11 char:1
++ Windows Powershell | MSS IT
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Windows:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+

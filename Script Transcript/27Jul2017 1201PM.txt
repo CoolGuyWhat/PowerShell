@@ -1,0 +1,348 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727120123
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8796
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 1201PM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Profile Loaded successfully
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapter | Where-Object { $_.MACAddress -ne $null }
+
+
+ServiceName      : e1iexpress
+MACAddress       : 6C:62:6D:5C:6A:36
+AdapterType      : Ethernet 802.3
+DeviceID         : 1
+Name             : Intel(R) 82578DM Gigabit Network Connection
+NetworkAddresses :
+Speed            : 1000000000
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapter
+
+
+ServiceName      : kdnic
+MACAddress       :
+AdapterType      :
+DeviceID         : 0
+Name             : Microsoft Kernel Debug Network Adapter
+NetworkAddresses :
+Speed            :
+
+ServiceName      : e1iexpress
+MACAddress       : 6C:62:6D:5C:6A:36
+AdapterType      : Ethernet 802.3
+DeviceID         : 1
+Name             : Intel(R) 82578DM Gigabit Network Connection
+NetworkAddresses :
+Speed            : 1000000000
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapter | Select-Object -Property *
+
+
+PSComputerName              : MSSDT04
+Availability                : 3
+Name                        : Microsoft Kernel Debug Network Adapter
+Status                      :
+StatusInfo                  :
+DeviceID                    : 0
+__GENUS                     : 2
+__CLASS                     : Win32_NetworkAdapter
+__SUPERCLASS                : CIM_NetworkAdapter
+__DYNASTY                   : CIM_ManagedSystemElement
+__RELPATH                   : Win32_NetworkAdapter.DeviceID="0"
+__PROPERTY_COUNT            : 40
+__DERIVATION                : {CIM_NetworkAdapter, CIM_LogicalDevice, CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER                    : MSSDT04
+__NAMESPACE                 : root\cimv2
+__PATH                      : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="0"
+AdapterType                 :
+AdapterTypeId               :
+AutoSense                   :
+Caption                     : [00000000] Microsoft Kernel Debug Network Adapter
+ConfigManagerErrorCode      : 0
+ConfigManagerUserConfig     : False
+CreationClassName           : Win32_NetworkAdapter
+Description                 : Microsoft Kernel Debug Network Adapter
+ErrorCleared                :
+ErrorDescription            :
+GUID                        :
+Index                       : 0
+InstallDate                 :
+Installed                   : True
+InterfaceIndex              : 2
+LastErrorCode               :
+MACAddress                  :
+Manufacturer                : Microsoft
+MaxNumberControlled         : 0
+MaxSpeed                    :
+NetConnectionID             :
+NetConnectionStatus         :
+NetEnabled                  :
+NetworkAddresses            :
+PermanentAddress            :
+PhysicalAdapter             : False
+PNPDeviceID                 : ROOT\KDNIC\0000
+PowerManagementCapabilities :
+PowerManagementSupported    : False
+ProductName                 : Microsoft Kernel Debug Network Adapter
+ServiceName                 : kdnic
+Speed                       :
+SystemCreationClassName     : Win32_ComputerSystem
+SystemName                  : MSSDT04
+TimeOfLastReset             : 20170721105531.491167+480
+Scope                       : System.Management.ManagementScope
+Path                        : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="0"
+Options                     : System.Management.ObjectGetOptions
+ClassPath                   : \\MSSDT04\root\cimv2:Win32_NetworkAdapter
+Properties                  : {AdapterType, AdapterTypeId, AutoSense, Availability...}
+SystemProperties            : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                  : {dynamic, Locale, provider, UUID}
+Site                        :
+Container                   :
+
+PSComputerName              : MSSDT04
+Availability                : 3
+Name                        : Intel(R) 82578DM Gigabit Network Connection
+Status                      :
+StatusInfo                  :
+DeviceID                    : 1
+__GENUS                     : 2
+__CLASS                     : Win32_NetworkAdapter
+__SUPERCLASS                : CIM_NetworkAdapter
+__DYNASTY                   : CIM_ManagedSystemElement
+__RELPATH                   : Win32_NetworkAdapter.DeviceID="1"
+__PROPERTY_COUNT            : 40
+__DERIVATION                : {CIM_NetworkAdapter, CIM_LogicalDevice, CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER                    : MSSDT04
+__NAMESPACE                 : root\cimv2
+__PATH                      : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="1"
+AdapterType                 : Ethernet 802.3
+AdapterTypeId               : 0
+AutoSense                   :
+Caption                     : [00000001] Intel(R) 82578DM Gigabit Network Connection
+ConfigManagerErrorCode      : 0
+ConfigManagerUserConfig     : False
+CreationClassName           : Win32_NetworkAdapter
+Description                 : Intel(R) 82578DM Gigabit Network Connection
+ErrorCleared                :
+ErrorDescription            :
+GUID                        : {FBA7B8B8-90A7-4646-9E74-1F3CE5C8714F}
+Index                       : 1
+InstallDate                 :
+Installed                   : True
+InterfaceIndex              : 3
+LastErrorCode               :
+MACAddress                  : 6C:62:6D:5C:6A:36
+Manufacturer                : Intel Corporation
+MaxNumberControlled         : 0
+MaxSpeed                    :
+NetConnectionID             : Ethernet
+NetConnectionStatus         : 2
+NetEnabled                  : True
+NetworkAddresses            :
+PermanentAddress            :
+PhysicalAdapter             : True
+PNPDeviceID                 : PCI\VEN_8086&DEV_10EF&SUBSYS_304A103C&REV_05\3&33FD14CA&0&C8
+PowerManagementCapabilities :
+PowerManagementSupported    : False
+ProductName                 : Intel(R) 82578DM Gigabit Network Connection
+ServiceName                 : e1iexpress
+Speed                       : 1000000000
+SystemCreationClassName     : Win32_ComputerSystem
+SystemName                  : MSSDT04
+TimeOfLastReset             : 20170721105531.491167+480
+Scope                       : System.Management.ManagementScope
+Path                        : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="1"
+Options                     : System.Management.ObjectGetOptions
+ClassPath                   : \\MSSDT04\root\cimv2:Win32_NetworkAdapter
+Properties                  : {AdapterType, AdapterTypeId, AutoSense, Availability...}
+SystemProperties            : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                  : {dynamic, Locale, provider, UUID}
+Site                        :
+Container                   :
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapter | Where-Object { $_.MACAddress -ne $null } | Select-Object -Property *
+
+
+PSComputerName              : MSSDT04
+Availability                : 3
+Name                        : Intel(R) 82578DM Gigabit Network Connection
+Status                      :
+StatusInfo                  :
+DeviceID                    : 1
+__GENUS                     : 2
+__CLASS                     : Win32_NetworkAdapter
+__SUPERCLASS                : CIM_NetworkAdapter
+__DYNASTY                   : CIM_ManagedSystemElement
+__RELPATH                   : Win32_NetworkAdapter.DeviceID="1"
+__PROPERTY_COUNT            : 40
+__DERIVATION                : {CIM_NetworkAdapter, CIM_LogicalDevice, CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER                    : MSSDT04
+__NAMESPACE                 : root\cimv2
+__PATH                      : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="1"
+AdapterType                 : Ethernet 802.3
+AdapterTypeId               : 0
+AutoSense                   :
+Caption                     : [00000001] Intel(R) 82578DM Gigabit Network Connection
+ConfigManagerErrorCode      : 0
+ConfigManagerUserConfig     : False
+CreationClassName           : Win32_NetworkAdapter
+Description                 : Intel(R) 82578DM Gigabit Network Connection
+ErrorCleared                :
+ErrorDescription            :
+GUID                        : {FBA7B8B8-90A7-4646-9E74-1F3CE5C8714F}
+Index                       : 1
+InstallDate                 :
+Installed                   : True
+InterfaceIndex              : 3
+LastErrorCode               :
+MACAddress                  : 6C:62:6D:5C:6A:36
+Manufacturer                : Intel Corporation
+MaxNumberControlled         : 0
+MaxSpeed                    :
+NetConnectionID             : Ethernet
+NetConnectionStatus         : 2
+NetEnabled                  : True
+NetworkAddresses            :
+PermanentAddress            :
+PhysicalAdapter             : True
+PNPDeviceID                 : PCI\VEN_8086&DEV_10EF&SUBSYS_304A103C&REV_05\3&33FD14CA&0&C8
+PowerManagementCapabilities :
+PowerManagementSupported    : False
+ProductName                 : Intel(R) 82578DM Gigabit Network Connection
+ServiceName                 : e1iexpress
+Speed                       : 1000000000
+SystemCreationClassName     : Win32_ComputerSystem
+SystemName                  : MSSDT04
+TimeOfLastReset             : 20170721105531.491167+480
+Scope                       : System.Management.ManagementScope
+Path                        : \\MSSDT04\root\cimv2:Win32_NetworkAdapter.DeviceID="1"
+Options                     : System.Management.ObjectGetOptions
+ClassPath                   : \\MSSDT04\root\cimv2:Win32_NetworkAdapter
+Properties                  : {AdapterType, AdapterTypeId, AutoSense, Availability...}
+SystemProperties            : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                  : {dynamic, Locale, provider, UUID}
+Site                        :
+Container                   :
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null }
+
+
+DHCPEnabled      : True
+IPAddress        : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DefaultIPGateway : {192.168.1.1}
+DNSDomain        : mss.local
+ServiceName      : e1iexpress
+Description      : Intel(R) 82578DM Gigabit Network Connection
+Index            : 1
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property *
+
+
+PSComputerName               : MSSDT04
+DHCPLeaseExpires             : 20170727134530.000000+480
+Index                        : 1
+Description                  : Intel(R) 82578DM Gigabit Network Connection
+DHCPEnabled                  : True
+DHCPLeaseObtained            : 20170727114530.000000+480
+DHCPServer                   : 192.168.1.253
+DNSDomain                    : mss.local
+DNSDomainSuffixSearchOrder   : {mss.local}
+DNSEnabledForWINSResolution  : False
+DNSHostName                  : MSSDT04
+DNSServerSearchOrder         : {192.168.1.253, 192.168.1.252}
+DomainDNSRegistrationEnabled : False
+FullDNSRegistrationEnabled   : True
+IPAddress                    : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+IPConnectionMetric           : 25
+IPEnabled                    : True
+IPFilterSecurityEnabled      : False
+WINSEnableLMHostsLookup      : True
+WINSHostLookupFile           :
+WINSPrimaryServer            :
+WINSScopeID                  :
+WINSSecondaryServer          :
+__GENUS                      : 2
+__CLASS                      : Win32_NetworkAdapterConfiguration
+__SUPERCLASS                 : CIM_Setting
+__DYNASTY                    : CIM_Setting
+__RELPATH                    : Win32_NetworkAdapterConfiguration.Index=1
+__PROPERTY_COUNT             : 61
+__DERIVATION                 : {CIM_Setting}
+__SERVER                     : MSSDT04
+__NAMESPACE                  : root\cimv2
+__PATH                       : \\MSSDT04\root\cimv2:Win32_NetworkAdapterConfiguration.Index=1
+ArpAlwaysSourceRoute         :
+ArpUseEtherSNAP              :
+Caption                      : [00000001] Intel(R) 82578DM Gigabit Network Connection
+DatabasePath                 : %SystemRoot%\System32\drivers\etc
+DeadGWDetectEnabled          :
+DefaultIPGateway             : {192.168.1.1}
+DefaultTOS                   :
+DefaultTTL                   :
+ForwardBufferMemory          :
+GatewayCostMetric            : {0}
+IGMPLevel                    :
+InterfaceIndex               : 3
+IPPortSecurityEnabled        :
+IPSecPermitIPProtocols       : {}
+IPSecPermitTCPPorts          : {}
+IPSecPermitUDPPorts          : {}
+IPSubnet                     : {255.255.255.0, 64}
+IPUseZeroBroadcast           :
+IPXAddress                   :
+IPXEnabled                   :
+IPXFrameType                 :
+IPXMediaType                 :
+IPXNetworkNumber             :
+IPXVirtualNetNumber          :
+KeepAliveInterval            :
+KeepAliveTime                :
+MACAddress                   : 6C:62:6D:5C:6A:36
+MTU                          :
+NumForwardPackets            :
+PMTUBHDetectEnabled          :
+PMTUDiscoveryEnabled         :
+ServiceName                  : e1iexpress
+SettingID                    : {FBA7B8B8-90A7-4646-9E74-1F3CE5C8714F}
+TcpipNetbiosOptions          : 0
+TcpMaxConnectRetransmissions :
+TcpMaxDataRetransmissions    :
+TcpNumConnections            :
+TcpUseRFC1122UrgentPointer   :
+TcpWindowSize                : 64512
+Scope                        : System.Management.ManagementScope
+Path                         : \\MSSDT04\root\cimv2:Win32_NetworkAdapterConfiguration.Index=1
+Options                      : System.Management.ObjectGetOptions
+ClassPath                    : \\MSSDT04\root\cimv2:Win32_NetworkAdapterConfiguration
+Properties                   : {ArpAlwaysSourceRoute, ArpUseEtherSNAP, Caption, DatabasePath...}
+SystemProperties             : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                   : {dynamic, Locale, provider, UUID}
+Site                         :
+Container                    :
+
+
+

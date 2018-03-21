@@ -1,0 +1,54 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727085911
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8356
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0859AM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Profile Loaded successfully
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Trying to Connect to MSSDT03 with Credentials provided
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot complete the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM firewall exception for public profiles limits access to remote computers within the same local subnet. For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03  
+         Connection attempted and failed at 07/27/2017 08:59:59
+         Error log Written to C:\Logs\RemoteDetails.Log
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:6
++   if(-ne(Test-Path $path))
++      ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:6
++   if(-ne(Test-Path $path))
++      ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Trying to Connect to MSSDT03 with Credentials provided
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03  
+         Connection attempted and failed at 07/27/2017 09:01:52
+         Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Trying to Connect to MSSDT03 with Credentials provided
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03  
+         Connection attempted and failed at 07/27/2017 09:02:42
+         Error log Written to C:\Logs\RemoteDetails.Log

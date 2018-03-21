@@ -1,0 +1,116 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728100300
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11504
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 1003AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-Variable
+
+Name                           Value
+----                           -----
+$
+?                              True
+^
+args                           {}
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {}
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\aaron
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+PID                            11504
+PROFILE                        C:\Users\aaron\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\Users\aaron\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+PSCulture                      en-AU
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\Users\aaron\Documents\WindowsPowerShell
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\Users\aaron\Documents\WindowsPowerShell
+ShellId                        Microsoft.PowerShell
+StackTrace
+TimeStamp                      28Jul2017 1003AM
+true                           True
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+$Session = New-PSSession -ComputerName $Computer -Credential $Credential
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+$Invoke = invoke-command -Session $Session -ScriptBlock {$Script}
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = Invoke-command -computername MSSfS01 -credential $Credential -ScriptBlock {Hostname}
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+MSSFS01
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = Invoke-command -computername MSSfS01 -credential $Credential -ScriptBlock {$Script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = invoke-command -Session $Session -ScriptBlock {$Script}
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Hostname
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = invoke-command -Session $Session -ScriptBlock {$Script}
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = invoke-command -Session $Session -Credential $Credential -ScriptBlock {$Script}
+>> TerminatingError(Invoke-Command): "Parameter set cannot be resolved using the specified named parameters."
+Invoke-Command : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:11
++ $Invoke = invoke-command -Session $Session -Credential $Credential -S ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:11
++ $Invoke = invoke-command -Session $Session -Credential $Credential -S ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke

@@ -1,0 +1,26 @@
+name,samaccountName,Company,City,Department,EmployeeNumber,Division
+KAbercrombie,KAbercrombie,Contoso,New York,IT,7892546,Automotive
+DBacon,DBacon,Contoso,London,Sales,7892547,Automotive
+MCameron,MCameron,Contoso,Berlin,Sales,7892548,Automotive
+MDanseglio,MDanseglio,Contoso,New York,Sales,7892549,Automotive
+JEdwards,JEdwards,Contoso,New York,Sales,7892550,Automotive
+HFeng,HFeng,Contoso,Seattle,IT,7892551,Automotive
+DGalvin,DGalvin,Contoso,London,IT,7892552,Automotive
+DHamilton,DHamilton,Contoso,Seattle,IT,7892553,Automotive
+RIhrig,RIhrig,Contoso,Berlin,Sales,7892554,Automotive
+DJaffe,DJaffe,Contoso,New York,Sales,7892555,Automotive
+SKamal,SKamal,Contoso,New York,Sales,7892556,Automotive
+KLamb,KLamb,Contoso,London,Sales,7892557,Automotive
+TMakovec,TMakovec,Contoso,London,Sales,7892558,Automotive
+MNaik,MNaik,Contoso,New York,Sales,7892559,Healthcare
+POla,POla,Contoso,Berlin,IT,7892560,Healthcare
+IPalamgio,IPalamgio,Contoso,Berlin,IT,7892561,Healthcare
+ARaghav,ARaghav,Contoso,London,IT,7892562,Healthcare
+MSaenz,MSaenz,Contoso,San Francisco,IT,7892563,Healthcare
+BTham,BTham,Contoso,Berlin,IT,7892564,Healthcare
+SUddin,SUddin,Contoso,Seattle,Sales,7892565,Healthcare
+GVargas,GVargas,Contoso,Seattle,Sales,7892566,Healthcare
+DWaite,DWaite,Contoso,London,Sales,7892567,Healthcare
+IXylaras,IXylaras,Contoso,New York,Sales,7892568,Healthcare
+SYair,SYair,Contoso,Berlin,Sales,7892569,Healthcare
+MZajc,MZajc,Contoso,Berlin,Sales,7892570,Healthcare

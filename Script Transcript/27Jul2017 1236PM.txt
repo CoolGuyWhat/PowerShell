@@ -1,0 +1,200 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727123654
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12944
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 1236PM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Profile Loaded successfully
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property PSComputerName, DNSDomain, Description, IPAddress, DHCPServer, MACAddress
+
+
+
+PSComputerName : MSSDT04
+DNSDomain      : mss.local
+Description    : Intel(R) 82578DM Gigabit Network Connection
+IPAddress      : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer     : 192.168.1.253
+MACAddress     : 6C:62:6D:5C:6A:36
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : mss.local
+   Link-local IPv6 Address . . . . . : fe80::c9a:2c93:4146:83bc%3
+   IPv4 Address. . . . . . . . . . . : 192.168.1.122
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.1.1
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-NetRoute
+
+ifIndex DestinationPrefix                              NextHop                                  RouteMetric ifMetric Po
+                                                                                                                     li
+                                                                                                                     cy
+                                                                                                                     St
+                                                                                                                     or
+                                                                                                                     e
+------- -----------------                              -------                                  ----------- -------- --
+3       255.255.255.255/32                             0.0.0.0                                          256 25       Ac
+1       255.255.255.255/32                             0.0.0.0                                          256 75       Ac
+3       224.0.0.0/4                                    0.0.0.0                                          256 25       Ac
+1       224.0.0.0/4                                    0.0.0.0                                          256 75       Ac
+3       192.168.1.255/32                               0.0.0.0                                          256 25       Ac
+3       192.168.1.122/32                               0.0.0.0                                          256 25       Ac
+3       192.168.1.0/24                                 0.0.0.0                                          256 25       Ac
+1       127.255.255.255/32                             0.0.0.0                                          256 75       Ac
+1       127.0.0.1/32                                   0.0.0.0                                          256 75       Ac
+1       127.0.0.0/8                                    0.0.0.0                                          256 75       Ac
+3       0.0.0.0/0                                      192.168.1.1                                        0 25       Ac
+3       ff00::/8                                       ::                                               256 25       Ac
+1       ff00::/8                                       ::                                               256 75       Ac
+3       fe80::c9a:2c93:4146:83bc/128                   ::                                               256 25       Ac
+3       fe80::/64                                      ::                                               256 25       Ac
+1       ::1/128                                        ::                                               256 75       Ac
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-NetRoute
+
+ifIndex DestinationPrefix                              NextHop                                  RouteMetric ifMetric PolicyStore
+------- -----------------                              -------                                  ----------- -------- -----------
+3       255.255.255.255/32                             0.0.0.0                                          256 25       ActiveStore
+1       255.255.255.255/32                             0.0.0.0                                          256 75       ActiveStore
+3       224.0.0.0/4                                    0.0.0.0                                          256 25       ActiveStore
+1       224.0.0.0/4                                    0.0.0.0                                          256 75       ActiveStore
+3       192.168.1.255/32                               0.0.0.0                                          256 25       ActiveStore
+3       192.168.1.122/32                               0.0.0.0                                          256 25       ActiveStore
+3       192.168.1.0/24                                 0.0.0.0                                          256 25       ActiveStore
+1       127.255.255.255/32                             0.0.0.0                                          256 75       ActiveStore
+1       127.0.0.1/32                                   0.0.0.0                                          256 75       ActiveStore
+1       127.0.0.0/8                                    0.0.0.0                                          256 75       ActiveStore
+3       0.0.0.0/0                                      192.168.1.1                                        0 25       ActiveStore
+3       ff00::/8                                       ::                                               256 25       ActiveStore
+1       ff00::/8                                       ::                                               256 75       ActiveStore
+3       fe80::c9a:2c93:4146:83bc/128                   ::                                               256 25       ActiveStore
+3       fe80::/64                                      ::                                               256 25       ActiveStore
+1       ::1/128                                        ::                                               256 75       ActiveStore
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-Net6to4Configuration
+
+
+Description               : 6to4 Configuration
+State                     : Default
+AutoSharing               : Default
+RelayName                 : 6to4.ipv6.microsoft.com.
+RelayState                : Default
+ResolutionIntervalSeconds : 1440
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-NetRoute | gm
+
+
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetRoute
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+ifIndex                   AliasProperty  ifIndex = InterfaceIndex
+Clone                     Method         System.Object ICloneable.Clone()
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Object obj)
+GetCimSessionComputerName Method         string GetCimSessionComputerName()
+GetCimSessionInstanceId   Method         guid GetCimSessionInstanceId()
+GetHashCode               Method         int GetHashCode()
+GetObjectData             Method         void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Ser...
+GetType                   Method         type GetType()
+ToString                  Method         string ToString()
+AdminDistance             Property       uint16 AdminDistance {get;set;}
+Caption                   Property       string Caption {get;set;}
+CompartmentId             Property       uint32 CompartmentId {get;}
+Description               Property       string Description {get;set;}
+DestinationAddress        Property       string DestinationAddress {get;set;}
+DestinationPrefix         Property       string DestinationPrefix {get;}
+ElementName               Property       string ElementName {get;set;}
+InstanceID                Property       string InstanceID {get;set;}
+InterfaceAlias            Property       string InterfaceAlias {get;}
+InterfaceIndex            Property       uint32 InterfaceIndex {get;}
+InterfaceMetric           Property       uint32 InterfaceMetric {get;}
+IsStatic                  Property       bool IsStatic {get;set;}
+NextHop                   Property       string NextHop {get;}
+PreferredLifetime         Property       CimInstance#DateTime PreferredLifetime {get;set;}
+PSComputerName            Property       string PSComputerName {get;}
+RouteMetric               Property       uint16 RouteMetric {get;set;}
+TypeOfRoute               Property       uint16 TypeOfRoute {get;set;}
+ValidLifetime             Property       CimInstance#DateTime ValidLifetime {get;set;}
+AddressFamily             ScriptProperty System.Object AddressFamily {get=[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRou...
+Protocol                  ScriptProperty System.Object Protocol {get=[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Pr...
+Publish                   ScriptProperty System.Object Publish {get=[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Pub...
+State                     ScriptProperty System.Object State {get=[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.State...
+Store                     ScriptProperty System.Object Store {get=[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Store...
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> gh select-object
+
+NAME
+    Select-Object
+
+SYNOPSIS
+    Selects objects or object properties.
+
+
+SYNTAX
+    Select-Object [[-Property] <Object[]>] [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-First <Int32>] [-InputObject
+    <PSObject>] [-Last <Int32>] [-Skip <Int32>] [-Unique] [-Wait] [<CommonParameters>]
+
+    Select-Object [[-Property] <Object[]>] [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-InputObject <PSObject>]
+    [-SkipLast <Int32>] [-Unique] [<CommonParameters>]
+
+    Select-Object [-Index <Int32[]>] [-InputObject <PSObject>] [-Unique] [-Wait] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Select-Object cmdlet selects specified properties of an object or set of objects. It can also select unique objects, a
+    specified number of objects, or objects in a specified position in an array.
+
+    To select objects from a collection, use the First , Last , Unique , Skip , and Index parameters. To select object properties,
+    use the Property parameter. When you select properties, Select-Object returns new objects that have only the specified properties.
+
+    Beginning in Windows PowerShell 3.0, Select-Object includes an optimization feature that prevents commands from creating and
+    processing objects that are not used. When you include a Select-Object command with the First or Index parameter in a command
+    pipeline, Windows PowerShell stops the command that generates the objects as soon as the selected number of objects is generated,
+    even when the command that generates the objects appears before the Select-Object command in the pipeline. To turn off this
+    optimizing behavior, use the Wait parameter.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821852
+    Group-Object
+    Sort-Object
+
+REMARKS
+    To see the examples, type: "get-help Select-Object -examples".
+    For more information, type: "get-help Select-Object -detailed".
+    For technical information, type: "get-help Select-Object -full".
+    For online help, type: "get-help Select-Object -online"
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> gh select-object -online
+PS C:\Users\aaron\Documents\WindowsPowerShell> exit
+**********************
+Windows PowerShell transcript end
+End time: 20170727131234
+**********************

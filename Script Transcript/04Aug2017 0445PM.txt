@@ -1,0 +1,119 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170804164530
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3632
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\04Aug2017 0445PM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\WINDOWS\system32> import-module ActiveDirectory | gm
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | gm
++                                 ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | gm
++                                 ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+
+PS C:\WINDOWS\system32> import-module ActiveDirectory | get-member
+get-member : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | get-member
++                                 ~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+get-member : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | get-member
++                                 ~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+
+PS C:\WINDOWS\system32> import-module ActiveDirectory
+PS C:\WINDOWS\system32> import-module ActiveDirectory | gm
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | gm
++                                 ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:33
++ import-module ActiveDirectory | gm
++                                 ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+
+PS C:\WINDOWS\system32> import-module * | gm
+import-module : The name of the current Windows PowerShell host is: 'ConsoleHost'. The module 
+'C:\Users\aaron\Documents\WindowsPowerShell\Modules\ISESteroids\ISESteroids.psd1' requires the following Windows 
+PowerShell host: 'Windows PowerShell ISE Host'.
+At line:1 char:1
++ import-module * | gm
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\Users\aaron\...SESteroids.psd1:String) [Import-Module], 
+InvalidOperationException
+    + FullyQualifiedErrorId : Modules_InvalidPowerShellHostName,Microsoft.PowerShell.Commands.ImportModuleCommand
+import-module : The name of the current Windows PowerShell host is: 'ConsoleHost'. The module
+'C:\Users\aaron\Documents\WindowsPowerShell\Modules\ISESteroids\ISESteroids.psd1' requires the following Windows
+PowerShell host: 'Windows PowerShell ISE Host'.
+At line:1 char:1
++ import-module * | gm
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\Users\aaron\...SESteroids.psd1:String) [Import-Module], Invalid
+   OperationException
+    + FullyQualifiedErrorId : Modules_InvalidPowerShellHostName,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:19
++ import-module * | gm
++                   ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+gm : You must specify an object for the Get-Member cmdlet.
+At line:1 char:19
++ import-module * | gm
++                   ~~
+    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
+    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
+
+PS C:\WINDOWS\system32> Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | format-list
+>> TerminatingError(Get-ADUser): "Directory object not found"
+Get-ADUser : Directory object not found
+At line:1 char:1
++ Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" |  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*OU=Support,OU=...DC=mss,DC=local:ADUser) [Get-ADUser], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Directory object not found
+At line:1 char:1
++ Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" |  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*OU=Support,OU=...DC=mss,DC=local:ADUser) [Get-ADUser], ADIdentityNotFo
+   undException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,M
+   icrosoft.ActiveDirectory.Management.Commands.GetADUser
+

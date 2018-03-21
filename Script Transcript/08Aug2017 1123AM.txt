@@ -1,0 +1,189 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170808112341
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13552
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\08Aug2017 1123AM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\WINDOWS\system32> Get-WmiObject -Class Win32_DiskDrive
+
+
+Partitions : 2
+DeviceID   : \\.\PHYSICALDRIVE0
+Model      : ST3160318AS
+Size       : 160039272960
+Caption    : ST3160318AS
+
+
+
+PS C:\WINDOWS\system32> Get-WmiObject -Class Win32_DiskDrive | Gm
+
+
+   TypeName: System.Management.ManagementObject#root\cimv2\Win32_DiskDrive
+
+Name                        MemberType    Definition
+----                        ----------    ----------
+PSComputerName              AliasProperty PSComputerName = __SERVER
+Reset                       Method        System.Management.ManagementBaseObject Reset()
+SetPowerState               Method        System.Management.ManagementBaseObject SetPowerState(System.UInt16 PowerSt...
+Availability                Property      uint16 Availability {get;set;}
+BytesPerSector              Property      uint32 BytesPerSector {get;set;}
+Capabilities                Property      uint16[] Capabilities {get;set;}
+CapabilityDescriptions      Property      string[] CapabilityDescriptions {get;set;}
+Caption                     Property      string Caption {get;set;}
+CompressionMethod           Property      string CompressionMethod {get;set;}
+ConfigManagerErrorCode      Property      uint32 ConfigManagerErrorCode {get;set;}
+ConfigManagerUserConfig     Property      bool ConfigManagerUserConfig {get;set;}
+CreationClassName           Property      string CreationClassName {get;set;}
+DefaultBlockSize            Property      uint64 DefaultBlockSize {get;set;}
+Description                 Property      string Description {get;set;}
+DeviceID                    Property      string DeviceID {get;set;}
+ErrorCleared                Property      bool ErrorCleared {get;set;}
+ErrorDescription            Property      string ErrorDescription {get;set;}
+ErrorMethodology            Property      string ErrorMethodology {get;set;}
+FirmwareRevision            Property      string FirmwareRevision {get;set;}
+Index                       Property      uint32 Index {get;set;}
+InstallDate                 Property      string InstallDate {get;set;}
+InterfaceType               Property      string InterfaceType {get;set;}
+LastErrorCode               Property      uint32 LastErrorCode {get;set;}
+Manufacturer                Property      string Manufacturer {get;set;}
+MaxBlockSize                Property      uint64 MaxBlockSize {get;set;}
+MaxMediaSize                Property      uint64 MaxMediaSize {get;set;}
+MediaLoaded                 Property      bool MediaLoaded {get;set;}
+MediaType                   Property      string MediaType {get;set;}
+MinBlockSize                Property      uint64 MinBlockSize {get;set;}
+Model                       Property      string Model {get;set;}
+Name                        Property      string Name {get;set;}
+NeedsCleaning               Property      bool NeedsCleaning {get;set;}
+NumberOfMediaSupported      Property      uint32 NumberOfMediaSupported {get;set;}
+Partitions                  Property      uint32 Partitions {get;set;}
+PNPDeviceID                 Property      string PNPDeviceID {get;set;}
+PowerManagementCapabilities Property      uint16[] PowerManagementCapabilities {get;set;}
+PowerManagementSupported    Property      bool PowerManagementSupported {get;set;}
+SCSIBus                     Property      uint32 SCSIBus {get;set;}
+SCSILogicalUnit             Property      uint16 SCSILogicalUnit {get;set;}
+SCSIPort                    Property      uint16 SCSIPort {get;set;}
+SCSITargetId                Property      uint16 SCSITargetId {get;set;}
+SectorsPerTrack             Property      uint32 SectorsPerTrack {get;set;}
+SerialNumber                Property      string SerialNumber {get;set;}
+Signature                   Property      uint32 Signature {get;set;}
+Size                        Property      uint64 Size {get;set;}
+Status                      Property      string Status {get;set;}
+StatusInfo                  Property      uint16 StatusInfo {get;set;}
+SystemCreationClassName     Property      string SystemCreationClassName {get;set;}
+SystemName                  Property      string SystemName {get;set;}
+TotalCylinders              Property      uint64 TotalCylinders {get;set;}
+TotalHeads                  Property      uint32 TotalHeads {get;set;}
+TotalSectors                Property      uint64 TotalSectors {get;set;}
+TotalTracks                 Property      uint64 TotalTracks {get;set;}
+TracksPerCylinder           Property      uint32 TracksPerCylinder {get;set;}
+__CLASS                     Property      string __CLASS {get;set;}
+__DERIVATION                Property      string[] __DERIVATION {get;set;}
+__DYNASTY                   Property      string __DYNASTY {get;set;}
+__GENUS                     Property      int __GENUS {get;set;}
+__NAMESPACE                 Property      string __NAMESPACE {get;set;}
+__PATH                      Property      string __PATH {get;set;}
+__PROPERTY_COUNT            Property      int __PROPERTY_COUNT {get;set;}
+__RELPATH                   Property      string __RELPATH {get;set;}
+__SERVER                    Property      string __SERVER {get;set;}
+__SUPERCLASS                Property      string __SUPERCLASS {get;set;}
+PSConfiguration             PropertySet   PSConfiguration {BytesPerSector, ConfigManagerUserConfig, DefaultBlockSize...
+PSStatus                    PropertySet   PSStatus {ConfigManagerErrorCode, LastErrorCode, NeedsCleaning, Status, De...
+ConvertFromDateTime         ScriptMethod  System.Object ConvertFromDateTime();
+ConvertToDateTime           ScriptMethod  System.Object ConvertToDateTime();
+
+
+PS C:\WINDOWS\system32> Get-WmiObject -Class Win32_DiskDrive | Select-Object -Property *
+
+
+PSComputerName              : MSSDT04
+ConfigManagerErrorCode      : 0
+LastErrorCode               :
+NeedsCleaning               :
+Status                      : OK
+DeviceID                    : \\.\PHYSICALDRIVE0
+StatusInfo                  :
+Partitions                  : 2
+BytesPerSector              : 512
+ConfigManagerUserConfig     : False
+DefaultBlockSize            :
+Index                       : 0
+InstallDate                 :
+InterfaceType               : SCSI
+MaxBlockSize                :
+MaxMediaSize                :
+MinBlockSize                :
+NumberOfMediaSupported      :
+SectorsPerTrack             : 63
+Size                        : 160039272960
+TotalCylinders              : 19457
+TotalHeads                  : 255
+TotalSectors                : 312576705
+TotalTracks                 : 4961535
+TracksPerCylinder           : 255
+__GENUS                     : 2
+__CLASS                     : Win32_DiskDrive
+__SUPERCLASS                : CIM_DiskDrive
+__DYNASTY                   : CIM_ManagedSystemElement
+__RELPATH                   : Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0"
+__PROPERTY_COUNT            : 51
+__DERIVATION                : {CIM_DiskDrive, CIM_MediaAccessDevice, CIM_LogicalDevice, CIM_LogicalElement...}
+__SERVER                    : MSSDT04
+__NAMESPACE                 : root\cimv2
+__PATH                      : \\MSSDT04\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0"
+Availability                :
+Capabilities                : {3, 4, 10}
+CapabilityDescriptions      : {Random Access, Supports Writing, SMART Notification}
+Caption                     : ST3160318AS
+CompressionMethod           :
+CreationClassName           : Win32_DiskDrive
+Description                 : Disk drive
+ErrorCleared                :
+ErrorDescription            :
+ErrorMethodology            :
+FirmwareRevision            : HP35
+Manufacturer                : (Standard disk drives)
+MediaLoaded                 : True
+MediaType                   : Fixed hard disk media
+Model                       : ST3160318AS
+Name                        : \\.\PHYSICALDRIVE0
+PNPDeviceID                 : SCSI\DISK&VEN_ST316031&PROD_8AS\4&1F04C57F&0&000000
+PowerManagementCapabilities :
+PowerManagementSupported    :
+SCSIBus                     : 0
+SCSILogicalUnit             : 0
+SCSIPort                    : 0
+SCSITargetId                : 0
+SerialNumber                : 9VY9M97R
+Signature                   : 3809671718
+SystemCreationClassName     : Win32_ComputerSystem
+SystemName                  : MSSDT04
+Scope                       : System.Management.ManagementScope
+Path                        : \\MSSDT04\root\cimv2:Win32_DiskDrive.DeviceID="\\\\.\\PHYSICALDRIVE0"
+Options                     : System.Management.ObjectGetOptions
+ClassPath                   : \\MSSDT04\root\cimv2:Win32_DiskDrive
+Properties                  : {Availability, BytesPerSector, Capabilities, CapabilityDescriptions...}
+SystemProperties            : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                  : {dynamic, Locale, provider, UUID}
+Site                        :
+Container                   :
+
+
+

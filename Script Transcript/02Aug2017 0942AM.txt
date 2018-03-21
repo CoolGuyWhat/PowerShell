@@ -1,0 +1,101 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170802094250
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13848
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\02Aug2017 0942AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> \!Current\
+\!Current\ : The term '\!Current\' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ \!Current\
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\!Current\:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+\!Current\ : The term '\!Current\' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ \!Current\
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\!Current\:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd \!Current\
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd .\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+VERBOSE: Connecting to MSSDT03 with Credentials provided
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+VERBOSE: Connecting to MSSFS01 with Credentials provided
+
+
+PC Name     : MSSFS01
+Domain      : mssit.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.249
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:02
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+VERBOSE: Connecting to MSSDT03 with Credentials provided
+
+
+PC Name     : MSSDT03
+Domain      : mss.local
+Description : Realtek PCIe GBE Family Controller
+IP Address  : {192.168.1.117, fe80::a48a:b34d:8f4a:e4a}
+DHCPServer  : 192.168.1.253
+MACAddress  : 48:0F:CF:5E:E2:81
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+VERBOSE: Connecting to MSSITVB01 with Credentials provided
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:92 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:92 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+

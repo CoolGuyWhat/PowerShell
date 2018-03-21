@@ -1,0 +1,66 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170719103937
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12860
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\19Jul2017 1039AM.txt
+PS C:\> Enter-PSSession -computer '192.168.1.120' -credential MSS\mss
+Enter-PSSession : Connecting to remote server 192.168.1.120 failed with the following error message : The WinRM client 
+cannot process the request. Default authentication may be used with an IP address under the following conditions: the 
+transport is HTTPS or the destination is in the TrustedHosts list, and explicit credentials are provided. Use winrm.cmd 
+to configure TrustedHosts. Note that computers in the TrustedHosts list might not be authenticated. For more 
+information on how to set TrustedHosts run the following command: winrm help config. For more information, see the 
+about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer '192.168.1.120' -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (192.168.1.120:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server 192.168.1.120 failed with the following error message : The WinRM client
+cannot process the request. Default authentication may be used with an IP address under the following conditions: the
+transport is HTTPS or the destination is in the TrustedHosts list, and explicit credentials are provided. Use
+winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be authenticated. For more
+information on how to set TrustedHosts run the following command: winrm help config. For more information, see the
+about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer '192.168.1.120' -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (192.168.1.120:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> ping 192.168.1.120
+
+Pinging 192.168.1.120 with 32 bytes of data:
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+
+Ping statistics for 192.168.1.120:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+PS C:\> ping -a 192.168.1.120
+
+Pinging MACBOOKPRO-E0B7 [192.168.1.120] with 32 bytes of data:
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+Reply from 192.168.1.120: bytes=32 time<1ms TTL=64
+
+Ping statistics for 192.168.1.120:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms

@@ -1,0 +1,155 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170725161528
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13684
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\25Jul2017 0415PM.txt
+ Windows Powershell | MSS IT
+PS C:\> cd C:\Users\aaron\Documents\WindowsPowerShell\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+[MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot complete the 
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that 
+a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSDT03:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+[MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot complete the
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSDT03:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> Get-ExecutionPolicy
+Unrestricted
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> Set-PSSessionConfiguration Microsoft.PowerShell -ShowSecurityDescriptorUI
+WARNING: Set-PSSessionConfiguration may need to restart the WinRM service if a configuration using this name has recently been unregistered, certain system data structures may still be cached. In that case, a restart of WinRM may be required.
+All WinRM sessions connected to Windows PowerShell session configurations, such as Microsoft.PowerShell and session configurations that are created with the Register-PSSessionConfiguration cmdlet, are disconnected.
+Start WinRM Service
+WinRM service is not started currently. Running this command will start the WinRM service.
+
+Do you want to continue?
+&Yes  &No  &Suspend
+Y
+>> TerminatingError(Start-WSManServiceD15A7957836142a18627D7E1D342DD82): "The term 'Restart' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."
+>> TerminatingError(): "The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". "
+The client cannot connect to the destination specified in the request. Verify that the service on the destination is 
+running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the 
+destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the 
+destination to analyze and configure the WinRM service: "winrm quickconfig". 
+At line:17 char:8
++    if ((!$pluginName) -or !(test-path "$pluginDir"))
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], InvalidOperationException
+    + FullyQualifiedErrorId : WsManError
+The client cannot connect to the destination specified in the request. Verify that the service on the destination is
+running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the
+destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the
+destination to analyze and configure the WinRM service: "winrm quickconfig".
+At line:17 char:8
++    if ((!$pluginName) -or !(test-path "$pluginDir"))
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], InvalidOperationException
+    + FullyQualifiedErrorId : WsManError
+
+Start WinRM Service
+WinRM service is not started currently. Running this command will start the WinRM service.
+
+Do you want to continue?
+&Yes  &No  &Suspend
+Y
+>> TerminatingError(Start-WSManServiceD15A7957836142a18627D7E1D342DD82): "The term 'Restart' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again."
+>> TerminatingError(Join-Path): "The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". "
+Join-Path : The client cannot connect to the destination specified in the request. Verify that the service on the 
+destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service 
+running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following 
+command on the destination to analyze and configure the WinRM service: "winrm quickconfig". 
+At line:24 char:26
++    $pluginFileNamePath = Join-Path "$pluginDir" 'FileName'
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Join-Path], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.JoinPathCommand
+Join-Path : The client cannot connect to the destination specified in the request. Verify that the service on the
+destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service
+running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following
+command on the destination to analyze and configure the WinRM service: "winrm quickconfig".
+At line:24 char:26
++    $pluginFileNamePath = Join-Path "$pluginDir" 'FileName'
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Join-Path], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.JoinPathCommand
+
+>> TerminatingError(Test-Path): "Cannot bind argument to parameter 'Path' because it is an empty string."
+Test-Path : Cannot bind argument to parameter 'Path' because it is an empty string.
+At line:25 char:20
++    if (!(test-path "$pluginFileNamePath"))
++                    ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.TestPathCommand
+Test-Path : Cannot bind argument to parameter 'Path' because it is an empty string.
+At line:25 char:20
++    if (!(test-path "$pluginFileNamePath"))
++                    ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.Test
+   PathCommand
+
+>> TerminatingError(Get-Item): "Cannot bind argument to parameter 'LiteralPath' because it is an empty string."
+Get-Item : Cannot bind argument to parameter 'LiteralPath' because it is an empty string.
+At line:31 char:44
++    $pluginFileName = get-item -literalpath "$pluginFileNamePath"
++                                            ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Item], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.GetItemCommand
+Get-Item : Cannot bind argument to parameter 'LiteralPath' because it is an empty string.
+At line:31 char:44
++    $pluginFileName = get-item -literalpath "$pluginFileNamePath"
++                                            ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Item], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.GetI
+   temCommand
+
+Set-PSSessionConfiguration : Session configuration "Microsoft.PowerShell" is not a Windows PowerShell-based shell.
+At line:173 char:1
++ Set-PSSessionConfiguration $args[0] $args[1] $args[2] $args[3] $args[ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Set-PSSessionConfiguration
+Set-PSSessionConfiguration : Session configuration "Microsoft.PowerShell" is not a Windows PowerShell-based shell.
+At line:173 char:1
++ Set-PSSessionConfiguration $args[0] $args[1] $args[2] $args[3] $args[ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Set-PSSessionConfiguration
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+[MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot complete the 
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that 
+a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSDT03:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+[MSSDT03] Connecting to remote server MSSDT03 failed with the following error message : WinRM cannot complete the
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSDT03:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1

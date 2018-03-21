@@ -1,0 +1,131 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727145805
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10828
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0258PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Session = New-PSSession -$Computer -Credential $Credential
+
+>> TerminatingError(New-PSSession): "One or more computer names are not valid. If you are trying to pass a URI, use the -ConnectionUri parameter, or pass URI objects instead of strings."
+New-PSSession : One or more computer names are not valid. If you are trying to pass a URI, use the -ConnectionUri 
+parameter, or pass URI objects instead of strings.
+At line:1 char:12
++ $Session = New-PSSession -$Computer -Credential $Credential
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.String[]:String[]) [New-PSSession], ArgumentException
+    + FullyQualifiedErrorId : PSSessionInvalidComputerName,Microsoft.PowerShell.Commands.NewPSSessionCommand
+New-PSSession : One or more computer names are not valid. If you are trying to pass a URI, use the -ConnectionUri
+parameter, or pass URI objects instead of strings.
+At line:1 char:12
++ $Session = New-PSSession -$Computer -Credential $Credential
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (System.String[]:String[]) [New-PSSession], ArgumentException
+    + FullyQualifiedErrorId : PSSessionInvalidComputerName,Microsoft.PowerShell.Commands.NewPSSessionCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Machine
+PS C:\Users\aaron\Documents\WindowsPowerShell> $_.Machine
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Compute
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer
+MSSFS01
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Session
+PS C:\Users\aaron\Documents\WindowsPowerShell> New-PSSession $computer $credential
+>> TerminatingError(New-PSSession): "A positional parameter cannot be found that accepts argument 'System.Management.Automation.PSCredential'."
+New-PSSession : A positional parameter cannot be found that accepts argument 
+'System.Management.Automation.PSCredential'.
+At line:1 char:1
++ New-PSSession $computer $credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.NewPSSessionCommand
+New-PSSession : A positional parameter cannot be found that accepts argument
+'System.Management.Automation.PSCredential'.
+At line:1 char:1
++ New-PSSession $computer $credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.NewPSSessionCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer
+MSSFS01
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Enter-PSSession $Computer $Credential
+>> TerminatingError(Enter-PSSession): "A positional parameter cannot be found that accepts argument 'System.Management.Automation.PSCredential'."
+Enter-PSSession : A positional parameter cannot be found that accepts argument 
+'System.Management.Automation.PSCredential'.
+At line:1 char:1
++ Enter-PSSession $Computer $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : A positional parameter cannot be found that accepts argument
+'System.Management.Automation.PSCredential'.
+At line:1 char:1
++ Enter-PSSession $Computer $Credential
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Enter-PSSession $Computer
+Enter-PSSession : Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For 
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession $Computer
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (MSSFS01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession $Computer
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (MSSFS01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Enter-PSSession -ComputerName $Computer -Credential $Credential -ErrorAction Stop
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> hostnae
+hostnae : The term 'hostnae' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ hostnae
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (hostnae:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+hostnae : The term 'hostnae' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ hostnae
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (hostnae:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> hostname
+MSSDT04
+PS C:\Users\aaron\Documents\WindowsPowerShell> exit
+**********************
+Windows PowerShell transcript end
+End time: 20170727152610
+**********************

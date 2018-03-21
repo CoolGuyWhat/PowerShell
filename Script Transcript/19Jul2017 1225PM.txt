@@ -1,0 +1,34 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170719122541
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10680
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\19Jul2017 1225PM.txt
+PS C:\> Enter-PSSession -HostName 'MSSVB01' -Credential MSS\mss
+>> TerminatingError(Enter-PSSession): "Parameter set cannot be resolved using the specified named parameters."
+Enter-PSSession : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:1
++ Enter-PSSession -HostName 'MSSVB01' -Credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:1
++ Enter-PSSession -HostName 'MSSVB01' -Credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+
+PS C:\> Enter-PSSession -ComputerName 'MSSVB01' -Credential MSS\mss

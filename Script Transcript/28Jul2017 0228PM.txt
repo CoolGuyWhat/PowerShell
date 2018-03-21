@@ -1,0 +1,55 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728142836
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7276
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 0228PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSFS01 with Credentials provided
+
+
+PC Name     : MSSFS01
+Domain      : mssit.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.249
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:02
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSDT03 with Credentials provided
+
+
+PC Name     : MSSDT03
+Domain      : mss.local
+Description : Realtek PCIe GBE Family Controller
+IP Address  : {192.168.1.117, fe80::a48a:b34d:8f4a:e4a}
+DHCPServer  : 192.168.1.253
+MACAddress  : 48:0F:CF:5E:E2:81
+
+
+

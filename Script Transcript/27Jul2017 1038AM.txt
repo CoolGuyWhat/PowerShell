@@ -1,0 +1,34 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727103802
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10564
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 1038AM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Profile Loaded successfully
+PS C:\Users\aaron\Documents\WindowsPowerShell> tnc 192.168.1.151
+WARNING: Ping to 192.168.1.151 failed with status: DestinationHostUnreachable
+
+
+ComputerName           : 192.168.1.151
+RemoteAddress          : 192.168.1.151
+InterfaceAlias         : Ethernet
+SourceAddress          : 192.168.1.122
+PingSucceeded          : False
+PingReplyDetails (RTT) : 0 ms
+
+
+

@@ -1,0 +1,293 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727140940
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12592
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0209PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> gh *name*
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Rename-Computer                   Cmdlet    Microsoft.PowerShell.M... Renames a computer.
+Rename-Item                       Cmdlet    Microsoft.PowerShell.M... Renames an item in a Windows PowerShell provid...
+Rename-ItemProperty               Cmdlet    Microsoft.PowerShell.M... Renames a property of an item.
+Rename-DAEntryPointTableItem      Function  DirectAccessClientComp... ...
+Resolve-DnsName                   Cmdlet    DnsClient                 Resolve-DnsName...
+Rename-LocalUser                  Cmdlet    Microsoft.PowerShell.L... Rename-LocalUser...
+Rename-LocalGroup                 Cmdlet    Microsoft.PowerShell.L... Rename-LocalGroup...
+Rename-NetAdapter                 Function  NetAdapter                ...
+Rename-NetLbfoTeam                Function  NetLbfo                   ...
+Rename-NetIPsecMainModeRule       Function  NetSecurity               ...
+Rename-NetIPsecPhase1AuthSet      Function  NetSecurity               ...
+Rename-NetIPsecQuickModeCryptoSet Function  NetSecurity               ...
+Rename-NetFirewallRule            Function  NetSecurity               ...
+Rename-NetIPsecRule               Function  NetSecurity               ...
+Rename-NetIPsecMainModeCryptoSet  Function  NetSecurity               ...
+Rename-NetIPsecPhase2AuthSet      Function  NetSecurity               ...
+Rename-NetSwitchTeam              Function  NetSwitchTeam             ...
+Rename-NetIPHttpsConfiguration    Function  NetworkTransition         ...
+Rename-Printer                    Function  PrintManagement           ...
+Rename-MaskingSet                 Function  Storage                   ...
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-Computer
+Get-Computer : The term 'Get-Computer' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Get-Computer
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-Computer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-Computer : The term 'Get-Computer' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Get-Computer
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-Computer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-ComputerName
+Get-ComputerName : The term 'Get-ComputerName' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ Get-ComputerName
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-ComputerName:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Get-ComputerName : The term 'Get-ComputerName' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ Get-ComputerName
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-ComputerName:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> gh computer
+
+Name                              Category  Module                    Synopsis
+----                              --------  ------                    --------
+Add-Computer                      Cmdlet    Microsoft.PowerShell.M... Add the local computer to a domain or workgroup.
+Checkpoint-Computer               Cmdlet    Microsoft.PowerShell.M... Creates a system restore point on the local co...
+Disable-ComputerRestore           Cmdlet    Microsoft.PowerShell.M... Disables the System Restore feature on the spe...
+Enable-ComputerRestore            Cmdlet    Microsoft.PowerShell.M... Enables the System Restore feature on the spec...
+Get-ComputerInfo                  Cmdlet    Microsoft.PowerShell.M... Gets a consolidated object of system and opera...
+Get-ComputerRestorePoint          Cmdlet    Microsoft.PowerShell.M... Gets the restore points on the local computer.
+Remove-Computer                   Cmdlet    Microsoft.PowerShell.M... Removes the local computer from its domain.
+Rename-Computer                   Cmdlet    Microsoft.PowerShell.M... Renames a computer.
+Reset-ComputerMachinePassword     Cmdlet    Microsoft.PowerShell.M... Resets the machine account password for the co...
+Restart-Computer                  Cmdlet    Microsoft.PowerShell.M... Restarts ("reboots") the operating system on l...
+Restore-Computer                  Cmdlet    Microsoft.PowerShell.M... Starts a system restore on the local computer.
+Stop-Computer                     Cmdlet    Microsoft.PowerShell.M... Stops (shuts down) local and remote computers.
+Test-ComputerSecureChannel        Cmdlet    Microsoft.PowerShell.M... Tests and repairs the secure channel between t...
+Get-MpComputerStatus              Function  Defender                  ...
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-Computerinfo
+
+
+WindowsBuildLabEx                                       : 15063.0.amd64fre.rs2_release.170317-1834
+WindowsCurrentVersion                                   : 6.3
+WindowsEditionId                                        : Professional
+WindowsInstallationType                                 : Client
+WindowsInstallDateFromRegistry                          : 13/07/2017 12:37:09 PM
+WindowsProductId                                        : 00331-20020-00000-AA352
+WindowsProductName                                      : Windows 10 Pro
+WindowsRegisteredOrganization                           :
+WindowsRegisteredOwner                                  : Windows User
+WindowsSystemRoot                                       : C:\WINDOWS
+WindowsVersion                                          : 1703
+BiosCharacteristics                                     : {7, 9, 11, 12...}
+BiosBIOSVersion                                         : {HPQOEM - 20100609}
+BiosBuildNumber                                         :
+BiosCaption                                             : Default System BIOS
+BiosCodeSet                                             :
+BiosCurrentLanguage                                     : en|US|iso8859-1
+BiosDescription                                         : Default System BIOS
+BiosEmbeddedControllerMajorVersion                      : 255
+BiosEmbeddedControllerMinorVersion                      : 255
+BiosFirmwareType                                        : Bios
+BiosIdentificationCode                                  :
+BiosInstallableLanguages                                : 1
+BiosInstallDate                                         :
+BiosLanguageEdition                                     :
+BiosListOfLanguages                                     : {en|US|iso8859-1}
+BiosManufacturer                                        : Hewlett-Packard
+BiosName                                                : Default System BIOS
+BiosOtherTargetOS                                       :
+BiosPrimaryBIOS                                         : True
+BiosReleaseDate                                         : 9/06/2010 8:00:00 AM
+BiosSeralNumber                                         : AUD0330888
+BiosSMBIOSBIOSVersion                                   : 786H1 v01.05
+BiosSMBIOSMajorVersion                                  : 2
+BiosSMBIOSMinorVersion                                  : 6
+BiosSMBIOSPresent                                       : True
+BiosSoftwareElementState                                : Running
+BiosStatus                                              : OK
+BiosSystemBiosMajorVersion                              : 1
+BiosSystemBiosMinorVersion                              : 5
+BiosTargetOperatingSystem                               : 0
+BiosVersion                                             : HPQOEM - 20100609
+CsAdminPasswordStatus                                   : Disabled
+CsAutomaticManagedPagefile                              : True
+CsAutomaticResetBootOption                              : True
+CsAutomaticResetCapability                              : True
+CsBootOptionOnLimit                                     :
+CsBootOptionOnWatchDog                                  :
+CsBootROMSupported                                      : True
+CsBootStatus                                            : {0, 0, 0, 27...}
+CsBootupState                                           : Normal boot
+CsCaption                                               : MSSDT04
+CsChassisBootupState                                    : Safe
+CsChassisSKUNumber                                      :
+CsCurrentTimeZone                                       : 480
+CsDaylightInEffect                                      :
+CsDescription                                           : AT/AT COMPATIBLE
+CsDNSHostName                                           : MSSDT04
+CsDomain                                                : mss.local
+CsDomainRole                                            : MemberWorkstation
+CsEnableDaylightSavingsTime                             : True
+CsFrontPanelResetStatus                                 : NotImplemented
+CsHypervisorPresent                                     : False
+CsInfraredSupported                                     : False
+CsInitialLoadInfo                                       :
+CsInstallDate                                           :
+CsKeyboardPasswordStatus                                : NotImplemented
+CsLastLoadInfo                                          :
+CsManufacturer                                          : Hewlett-Packard
+CsModel                                                 : HP Compaq 8100 Elite SFF PC
+CsName                                                  : MSSDT04
+CsNetworkAdapters                                       : {Ethernet}
+CsNetworkServerModeEnabled                              : True
+CsNumberOfLogicalProcessors                             : 4
+CsNumberOfProcessors                                    : 1
+CsProcessors                                            : {Intel(R) Core(TM) i5 CPU         650  @ 3.20GHz}
+CsOEMStringArray                                        : {ABS 70/71 60 61 62 63}
+CsPartOfDomain                                          : True
+CsPauseAfterReset                                       : -1
+CsPCSystemType                                          : Desktop
+CsPCSystemTypeEx                                        : Desktop
+CsPowerManagementCapabilities                           :
+CsPowerManagementSupported                              :
+CsPowerOnPasswordStatus                                 : Disabled
+CsPowerState                                            : Unknown
+CsPowerSupplyState                                      : Safe
+CsPrimaryOwnerContact                                   :
+CsPrimaryOwnerName                                      : Windows User
+CsResetCapability                                       : Other
+CsResetCount                                            : -1
+CsResetLimit                                            : -1
+CsRoles                                                 : {LM_Workstation, LM_Server, NT, Potential_Browser}
+CsStatus                                                : OK
+CsSupportContactDescription                             :
+CsSystemFamily                                          : 103C_53307F
+CsSystemSKUNumber                                       : WM194PA#ABG
+CsSystemType                                            : x64-based PC
+CsThermalState                                          : Safe
+CsTotalPhysicalMemory                                   : 8379432960
+CsPhyicallyInstalledMemory                              : 8388608
+CsUserName                                              : MSS\aaron
+CsWakeUpType                                            : PowerSwitch
+CsWorkgroup                                             :
+OsName                                                  : Microsoft Windows 10 Pro
+OsType                                                  : WINNT
+OsOperatingSystemSKU                                    : 48
+OsVersion                                               : 10.0.15063
+OsCSDVersion                                            :
+OsBuildNumber                                           : 15063
+OsHotFixes                                              : {KB4022405, KB4025376, KB4025342}
+OsBootDevice                                            : \Device\HarddiskVolume1
+OsSystemDevice                                          : \Device\HarddiskVolume2
+OsSystemDirectory                                       : C:\WINDOWS\system32
+OsSystemDrive                                           : C:
+OsWindowsDirectory                                      : C:\WINDOWS
+OsCountryCode                                           : 61
+OsCurrentTimeZone                                       : 480
+OsLocaleID                                              : 0c09
+OsLocale                                                : en-AU
+OsLocalDateTime                                         : 27/07/2017 2:10:54 PM
+OsLastBootUpTime                                        : 21/07/2017 10:55:31 AM
+OsUptime                                                : 6.03:15:22.3220465
+OsBuildType                                             : Multiprocessor Free
+OsCodeSet                                               : 1252
+OsDataExecutionPreventionAvailable                      : True
+OsDataExecutionPrevention32BitApplications              : True
+OsDataExecutionPreventionDrivers                        : True
+OsDataExecutionPreventionSupportPolicy                  : OptIn
+OsDebug                                                 : False
+OsDistributed                                           : False
+OsEncryptionLevel                                       : 256
+OsForegroundApplicationBoost                            : Maximum
+OsTotalVisibleMemorySize                                : 8183040
+OsFreePhysicalMemory                                    : 3310372
+OsTotalVirtualMemorySize                                : 11971384
+OsFreeVirtualMemory                                     : 4588064
+OsInUseVirtualMemory                                    : 7383320
+OsTotalSwapSpaceSize                                    :
+OsSizeStoredInPagingFiles                               : 3788344
+OsFreeSpaceInPagingFiles                                : 3750888
+OsPagingFiles                                           : {C:\pagefile.sys}
+OsHardwareAbstractionLayer                              : 10.0.15063.0
+OsInstallDate                                           : 13/07/2017 8:37:09 PM
+OsManufacturer                                          : Microsoft Corporation
+OsMaxNumberOfProcesses                                  : 4294967295
+OsMaxProcessMemorySize                                  : 137438953344
+OsMuiLanguages                                          : {en-US}
+OsNumberOfLicensedUsers                                 : 0
+OsNumberOfProcesses                                     : 201
+OsNumberOfUsers                                         : 7
+OsOrganization                                          :
+OsArchitecture                                          : 64-bit
+OsLanguage                                              : en-US
+OsProductSuites                                         : {TerminalServicesSingleSession}
+OsOtherTypeDescription                                  :
+OsPAEEnabled                                            :
+OsPortableOperatingSystem                               : False
+OsPrimary                                               : True
+OsProductType                                           : WorkStation
+OsRegisteredUser                                        : Windows User
+OsSerialNumber                                          : 00331-20020-00000-AA352
+OsServicePackMajorVersion                               : 0
+OsServicePackMinorVersion                               : 0
+OsStatus                                                : OK
+OsSuites                                                : {TerminalServices, TerminalServicesSingleSession}
+OsServerLevel                                           :
+KeyboardLayout                                          : en-US
+TimeZone                                                : (UTC+08:00) Perth
+LogonServer                                             : \\MSSITDC02
+PowerPlatformRole                                       : Desktop
+HyperVisorPresent                                       : False
+HyperVRequirementDataExecutionPreventionAvailable       : True
+HyperVRequirementSecondLevelAddressTranslation          : True
+HyperVRequirementVirtualizationFirmwareEnabled          : False
+HyperVRequirementVMMonitorModeExtensions                : True
+DeviceGuardSmartStatus                                  : Off
+DeviceGuardRequiredSecurityProperties                   :
+DeviceGuardAvailableSecurityProperties                  :
+DeviceGuardSecurityServicesConfigured                   :
+DeviceGuardSecurityServicesRunning                      :
+DeviceGuardCodeIntegrityPolicyEnforcementStatus         :
+DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus :
+
+
+

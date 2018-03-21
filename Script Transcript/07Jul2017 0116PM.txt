@@ -1,0 +1,446 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170707131631
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 6644
+PSVersion: 5.1.14393.1358
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1358
+BuildVersion: 10.0.14393.1358
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\07Jul2017 0116PM.txt
+PS C:\> get-help Enter-PSSession
+
+NAME
+    Enter-PSSession
+
+SYNOPSIS
+    Starts an interactive session with a remote computer.
+
+
+SYNTAX
+    Enter-PSSession [[-ConnectionUri] <Uri>] [-AllowRedirection] [-Authentication {Default | Basic | Negotiate |
+    NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>]
+    [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-SessionOption
+    <PSSessionOption>] [<CommonParameters>]
+
+    Enter-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Authentication {Default | Basic | Negotiate
+    | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>]
+    [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-Port <Int32>] [-SessionOption
+    <PSSessionOption>] [-UseSSL] [<CommonParameters>]
+
+    Enter-PSSession [-VMId] <Guid> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-VMName] <String> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
+
+    Enter-PSSession [[-Id] <Int32>] [<CommonParameters>]
+
+    Enter-PSSession [-InstanceId <Guid>] [<CommonParameters>]
+
+    Enter-PSSession [-Name <String>] [<CommonParameters>]
+
+    Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Enter-PSSession cmdlet starts an interactive session with a single remote computer. During the session, the
+    commands that you type run on the remote computer, just as if you were typing directly on the remote computer. You
+    can have only one interactive session at a time.
+
+    Typically, you use the ComputerName parameter to specify the name of the remote computer. However, you can also
+    use a session that you create by using the New-PSSession cmdlet for the interactive session. However, you cannot
+    use the Disconnect-PSSession, Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to
+    an interactive session.
+
+    To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type
+    `exit`.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821477
+    Exit-PSSession
+    Get-PSSession
+    Invoke-Command
+    New-PSSession
+    Remove-PSSession
+    Connect-PSSession
+    Disconnect-PSSession
+    Receive-PSSession
+
+REMARKS
+    To see the examples, type: "get-help Enter-PSSession -examples".
+    For more information, type: "get-help Enter-PSSession -detailed".
+    For technical information, type: "get-help Enter-PSSession -full".
+    For online help, type: "get-help Enter-PSSession -online"
+
+
+PS C:\> Get-help Enter-PSSession -examples
+
+NAME
+    Enter-PSSession
+
+SYNOPSIS
+    Starts an interactive session with a remote computer.
+
+
+    Example 1: Start an interactive session
+
+    PS C:\>Enter-PSSession
+    [localhost]: PS C:\>
+
+    This command starts an interactive session on the local computer. The command prompt changes to indicate that you
+    are now running commands in a different session.
+
+    The commands that you enter run in the new session, and the results are returned to the default session as text.
+    Example 2: Work with an interactive session
+
+    The first command uses the **Enter-PSSession** cmdlet to start an interactive session with Server01, a remote
+    computer. When the session starts, the command prompt changes to include the computer name.
+    PS C:\>Enter-PSSession -Computer Server01
+    [Server01]: PS C:\>
+
+    The second command gets the Windows PowerShell process and redirects the output to the Process.txt file. The
+    command is submitted to the remote computer, and the file is saved on the remote computer.
+    [Server01]: PS C:\>Get-Process Powershell > C:\ps-test\Process.txt
+
+    The third command uses the **Exit** keyword to end the interactive session and close the connection.
+    [Server01]: PS C:\>exit
+    PS C:\>
+
+    The fourth command confirms that the Process.txt file is on the remote computer. A **Get-ChildItem** ("dir")
+    command on the local computer cannot find the file.
+    PS C:\>dir C:\ps-test\process.txt
+    Get-ChildItem : Cannot find path 'C:\ps-test\process.txt' because it does not exist.
+    At line:1 char:4
+    + dir <<<<  c:\ps-test\process.txt
+
+    This command shows how to work in an interactive session with a remote computer.
+    Example 3: Use the Session parameter
+
+    PS C:\>$s = New-PSSession -ComputerName Server01
+    PS C:\>Enter-PSSession -Session $s
+    [Server01]: PS C:\>
+
+    These commands use the Session parameter of Enter-PSSession to run the interactive session in an existing Windows
+    PowerShell session ( PSSession ).
+    Example 4: Start an interactive session and specify the Port and Credential parameters
+
+    PS C:\>Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
+    [Server01]: PS C:\>
+
+    This command starts an interactive session with the Server01 computer. It uses the Port parameter to specify the
+    port and the Credential parameter to specify the account of a user who has permission to connect to the remote
+    computer.
+    Example 5: Stop an interactive session
+
+    PS C:\>Enter-PSSession -ComputerName Server01
+    [Server01]: PS C:\>Exit-PSSession
+    PS C:\>
+
+    This example shows how to start and stop an interactive session. The first command uses the Enter-PSSession cmdlet
+    to start an interactive session with the Server01 computer.
+
+    The second command uses the Exit-PSSession cmdlet to end the session. You can also use the Exit keyword to end the
+    interactive session. Exit-PSSession and Exit have the same effect.
+
+
+
+PS C:\> Enter-PSSession -Computer MSSFS01
+Enter-PSSession : Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For 
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer MSSFS01
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (MSSFS01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server MSSFS01 failed with the following error message : Access is denied. For
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer MSSFS01
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (MSSFS01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> Enter-PSSession -Computer MSSFS01 -Credential MSS\mss
+PS C:\> New-Object
+>> TerminatingError(New-Object): "Cannot find type [Notepad]: verify that the assembly containing this type is loaded."
+New-Object : Cannot find type [Notepad]: verify that the assembly containing this type is loaded.
+At line:1 char:1
++ New-Object
++ ~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+New-Object : Cannot find type [Notepad]: verify that the assembly containing this type is loaded.
+At line:1 char:1
++ New-Object
++ ~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [New-Object], PSArgumentException
+    + FullyQualifiedErrorId : TypeNotFound,Microsoft.PowerShell.Commands.NewObjectCommand
+
+PS C:\> Get-help *logs*
+TOPIC
+    about_EventLogs
+
+SHORT DESCRIPTION
+    Windows PowerShell creates a Windows event log that is 
+    named "Windows PowerShell" to record Windows PowerShell events. You can
+    view this log in Event Viewer or by using cmdlets that get events, such as
+    the Get-EventLog cmdlet. By default, Windows PowerShell engine and provider
+    events are recorded in the event log, but you can use the event log 
+    preference variables to customize the event log. For example, you can add
+    events about Windows PowerShell commands.
+
+
+LONG DESCRIPTION
+    The Windows PowerShell event log records details of Windows PowerShell 
+    operations, such as starting and stopping the program engine and starting
+    and stopping the Windows PowerShell providers. You can also log details 
+    about Windows PowerShell commands.
+
+
+    The Windows PowerShell event log is in the Application and Services Logs
+    group. The Windows PowerShell log is a classic event log that does not use
+    the Windows Eventing technology. To view the log, use the cmdlets designed
+    for classic event logs, such as Get-EventLog.
+
+
+  Viewing the Windows PowerShell Event Log
+
+      You can view the Windows PowerShell event log in Event Viewer or by 
+      using the Get-EventLog and Get-WmiObject cmdlets. To view the contents 
+      of the Windows PowerShell log, type:
+
+  Get-EventLog -LogName "Windows PowerShell"
+
+   
+      To examine the events and their properties, use the Sort-Object cmdlet,
+      the Group-Object cmdlet, and the cmdlets that contain the Format verb 
+      (the Format cmdlets).
+
+
+      For example, to view the events in the log grouped by the event ID, type:
+
+  Get-EventLog "Windows PowerShell" | Format-Table -GroupBy EventID
+
+
+      Or, type:
+
+  Get-EventLog "Windows PowerShell" | Sort-Object EventID `
+            | Group-Object EventID
+
+
+      To view all the classic event logs, type:
+
+  Get-EventLog -List
+
+    
+      You can also use the Get-WmiObject cmdlet to use the event-related 
+      Windows Management Instumentation (WMI) classes to examine the event log.
+      For example, to view all the properties of the event log file, type:
+
+  Get-WmiObject Win32_NTEventLogFile | where `
+            {$_.LogFileName -eq "Windows PowerShell"} | Format-List -Property * 
+
+
+      To find the Win32 event-related WMI classes, type:
+
+Get-WmiObject -List | where {$_.Name -like "win32*event*"}
+
+
+      For more information, type "Get-Help Get-EventLog" and 
+      "Get-Help Get-WmiObject".
+
+
+  Selecting Events for the Windows PowerShell Event Log
+
+      You can use the event log preference variables to determine which events
+      are recorded in the Windows PowerShell event log. 
+
+
+      There are six event log preference variables; two variables for each of 
+      the three logging components: the engine (the Windows PowerShell 
+      program), the providers, and the commands. The LifeCycleEvent variables
+      log normal starting and stopping events. The Health variables log error
+      events.
+
+
+      The following table lists the event log preference variables.
+
+          Variable                     Description
+          --------------------------   ----------------------------------------
+
+  $LogEngineLifeCycleEvent     Logs starting and stopping of
+                                       Windows PowerShell.
+
+  $LogEngineHealthEvent        Logs Windows PowerShell program errors.
+
+  $LogProviderLifeCycleEvent   Logs starting and stopping of 
+                                       Windows PowerShell providers.
+
+  $LogProviderHealthEvent      Logs Windows PowerShell provider errors.
+
+  $LogCommandLifeCycleEvent    Logs starting and completion of commands.
+
+  $LogCommandHealthEvent       Logs command errors.
+
+
+      (For information about Windows PowerShell providers, 
+      type: "Get-Help about_providers".)
+
+
+      By default, only the following event types are enabled:
+
+  $LogEngineLifeCycleEvent
+  $LogEngineHealthEvent
+  $LogProviderLifeCycleEvent
+  $LogProviderHealthEvent
+
+
+      To enable an event type, set the preference variable for that event type
+      to $true. For example, to enable command life-cycle events, type:
+
+  $LogCommandLifeCycleEvent
+
+
+      Or, type:
+
+  $LogCommandLifeCycleEvent = $true
+
+
+      To disable an event type, set the preference variable for that event type
+      to $false. For example, to disable command life-cycle events, type:
+
+  $LogProviderLifeCycleEvent = $false
+
+      You can disable any event, except for the events that indicate that the
+      Windows PowerShell engine and the core providers are started. These events
+      are generated before the Windows PowerShell profiles are run and before 
+      the host program is ready to accept commands.
+    
+      The variable settings apply only for the current Windows PowerShell 
+      session. To apply them to all Windows PowerShell sessions, add them to
+      your Windows PowerShell profile.
+
+
+  Logging Module Events
+
+    Beginning in Windows PowerShell 3.0, you can record execution events for the cmdlets
+    and functions in Windows PowerShell modules and snap-ins by setting the
+    LogPipelineExecutionDetails property of modules and snap-ins to TRUE. In Windows 
+    PowerShell 2.0, this feature is available only for snap-ins.
+
+    When the LogPipelineExecutionDetails property value is TRUE ($True), Windows PowerShell 
+    writes cmdlet and function execution events in the session to the Windows PowerShell
+    log in Event Viewer. The setting is effective only in the current session.
+
+    To enable logging of execution events of cmdlets and functions in a module, use the
+    following command sequence.
+        Import-Module <ModuleName>
+        $m = Get-Module <ModuleName>
+        $m.LogPipelineExecutionDetails = $True
+
+    To enable logging of execution events of cmdlets in a snap-in, use the following
+    command sequence.
+        $m = Get-PSSnapin <SnapInName> [-Registered]
+        $m.LogPipelineExecutionDetails = $True
+
+    To disable logging, use the same command sequence to set the property
+    value to FALSE ($False).
+
+    You can also use the "Turn on Module Logging" Group Policy setting to enable
+    and disable module and snap-in logging. The policy value includes a list of 
+    module and snap-in names. Wildcards are supported.
+
+    When "Turn on Module Logging" is set for a module, the value of the 
+    LogPipelineExecutionDetails property of the module is TRUE in all sessions 
+    and it cannot be changed.
+
+    The Turn On Module Logging group policy setting is located in the following
+    Group Policy paths:
+
+        Computer Configuration\Administrative Templates\Windows Components\Windows PowerShell
+        User Configuration\Administrative Templates\Windows Components\Windows PowerShell
+
+    The User Configuration policy takes precedence over the Computer Configuration policy,
+    and both policies take preference over the value of the LogPipelineExecutionDetails 
+    property of modules and snap-ins.
+
+    For more information about this Group Policy setting, see about_Group_Policy_Settings
+    (http://go.microsoft.com/fwlink/?LinkID=251696).
+
+
+  Security and Auditing
+
+      The Windows PowerShell event log is designed to indicate activity and 
+      to provide operational details for troubleshooting. 
+
+
+      However, like most Windows-based application event logs, the 
+      Windows PowerShell event log is not designed to be secure. It should not
+      be used to audit security or to record confidential or proprietary 
+      information.
+
+
+      Event logs are designed to be read and understood by users. Users can 
+      read from and write to the log. A malicious user could read an event log
+      on a local or remote computer, record false data, and then prevent the
+      logging of their activities.
+
+
+NOTES
+    Authors of module authors can add logging features to
+    their modules. For more information, see "Writing a Windows PowerShell Module" in
+    MSDN at http://go.microsoft.com/fwlink/?LinkID=144916.
+
+
+SEE ALSO
+    Get-EventLog
+    Get-WmiObject
+    about_Group_Policy_Settings
+    about_Preference_Variables
+PS C:\> $PSS = Enter-PSSession -ComputerName
+>> TerminatingError(Enter-PSSession): "Missing an argument for parameter 'ComputerName'. Specify a parameter of type 'System.String' and try again."
+Enter-PSSession : Missing an argument for parameter 'ComputerName'. Specify a parameter of type 'System.String' and try 
+again.
+At line:1 char:24
++ $PSS = Enter-PSSession -ComputerName
++                        ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : Missing an argument for parameter 'ComputerName'. Specify a parameter of type 'System.String' and
+try again.
+At line:1 char:24
++ $PSS = Enter-PSSession -ComputerName
++                        ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+
+PS C:\> $PSS = Enter-PSSession
+Enter-PSSession : Connecting to remote server mssfs01 failed with the following error message : Access is denied. For 
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:8
++ $PSS = Enter-PSSession
++        ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssfs01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server mssfs01 failed with the following error message : Access is denied. For
+more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:8
++ $PSS = Enter-PSSession
++        ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssfs01:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> Enter-PSSession -ComputerName MSSFS01 -Credential Mss\Mss
+PS C:\> Enter-PSSession -Computername MSSVB01 -Credential MSS\mss
+PS C:\> Enter-PSSession -Computername MSSPS01 -Credential MSS\mss
+PS C:\> Enter-PSSession -ComputerName MSSITDC01 -Credential MSS\mss

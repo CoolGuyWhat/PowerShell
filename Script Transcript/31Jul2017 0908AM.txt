@@ -1,0 +1,66 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170731090824
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10080
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\31Jul2017 0908AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSITDC01 with Credentials provided
+
+
+PC Name     : MSSITDC01
+Domain      : mssit.com.au
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.253
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:03
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSVB01 with Credentials provided
+
+
+PC Name     : MSSVB01
+Domain      : mss.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.250
+DHCPServer  :
+MACAddress  : 00:15:5D:01:05:01
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSBV02 with Credentials provided
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+

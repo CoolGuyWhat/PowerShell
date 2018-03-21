@@ -1,0 +1,63 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727095546
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14100
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0955AM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Profile Loaded successfully
+PS C:\Users\aaron\Documents\WindowsPowerShell> NetCon.MSSDT03
+NetCon.MSSDT03 : The term 'NetCon.MSSDT03' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ NetCon.MSSDT03
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (NetCon.MSSDT03:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+NetCon.MSSDT03 : The term 'NetCon.MSSDT03' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ NetCon.MSSDT03
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (NetCon.MSSDT03:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> NetCon mssdt03
+
+
+ComputerName           : mssdt03
+RemoteAddress          : 192.168.1.117
+InterfaceAlias         : Ethernet
+SourceAddress          : 192.168.1.122
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> tnc mssdt02
+
+
+ComputerName           : mssdt02
+RemoteAddress          : 192.168.1.162
+InterfaceAlias         : Ethernet
+SourceAddress          : 192.168.1.122
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+
+
+

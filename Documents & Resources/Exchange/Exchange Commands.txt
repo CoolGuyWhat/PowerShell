@@ -1,0 +1,116 @@
+Setting OOF 
+Set-MailboxAutoReplyConfiguration <alias> -AutoReplyState enabled -ExternalAudience all -InternalMessage <Message to internal senders> -ExternalMessage <Message to external senders> 
+ 
+Export Mailbox(May have to give yourself access to use this command or use an admin account) 
+New-MailboxExportRequest -mailbox <alias> -FilePath "C:\Lukes" 
+ 
+Check mailbox export 
+Get-MailboxExportRquest 
+ 
+Suspend mailbox export(Use Get-MailboxExportRquest to find what MailboxExport it is) 
+Suspend-MailboxExportRequest -Identity "Ayla\MailboxExport1" 
+ 
+Resume mailbox export(Use Get-MailboxExportRquest to find what MailboxExport it is) 
+ 
+Remove mailbox export(Use Get-MailboxExportRquest to find what MailboxExport It is) 
+Remove-MailboxExportRequest -Identity "Ayla \MailboxExport1" 
+ 
+Test the Health of Services 
+Test-ServiceHealth 
+ 
+Grant Send on Behalf of Permissions 
+Set-Mailbox ‘user@domain.com’ -GrantSendOnBehalfTo ‘user@domain.com’ 
+ 
+Grant Full Access Permissions 
+Add-MailboxPermission -Identity usersmailbox@domain.com -AccessRights FullAccess -User usergettingpermission@domain.com 
+ 
+Grant SendAs Permissions 
+Add-ADPermission ‘user alias’ -User ‘user alias’ -Extendedrights “Send As” 
+ 
+Remove Full Access mailbox permission 
+Remove-MailboxPermission -Identity ‘user@domain.com’ -User domain\alias -AccessRights FullAccess -InheritanceType all 
+ 
+Setting Out of Office 
+Set-MailboxAutoReplyConfiguration –identity "ALIAS" –InternalMessage "INTERNAL OUT OF OFFICE MESSAGE HERE" –ExternalMessage "external OUT OF OFFICE MESSAGE HERE" 
+ 
+Add Editor permissions 
+Add-MailboxFolderPermission -Identity ‘user@domain.com’ -User ‘user@domain.com’ -AccessRights Editor 
+ 
+Add Reviewer permissions (what if) 
+Set-MailboxFolderPermission -Identity ‘user@domain.com’ -User ‘user@domain.com’ -AccessRights Reviewer -whatif 
+ 
+Getting Mailbox Folder Permissions 
+Get-MailboxFolderPermission -Identity ‘user@domain.com’ | fl 
+Get-MailboxFolderPermission -Identity user@domain.com:\inbox 
+ 
+Impersonation Rights 
+new-ManagementRoleAssignment Name:RoleName -Role:ApplicationImpersonation -User:’domain\alias’ 
+ 
+Get User Mailbox Permissions other than Inherited Permissions 
+Get-MailboxPermission -identity ‘user@domain.com’ | Where-Object {($_.AccessRights -like “*FullAccess*”) -and ($_.User -notlike “NT AUTHORITY\SELF”) -and ($_.IsInherited -eq $false)} 
+ 
+Get ALL User Mailbox Permissions 
+Get-MailboxPermission ‘user@domain.com’ | ft -AutoSize 
+ 
+Get User Mailbox Permissions (defined) 
+Get-MailboxPermission ‘user@domain.com’ | ft User,AccessRights -AutoSize 
+ 
+Use this command to find who is being rejected from sending to the target mailbox 
+get-mailbox -Identity ‘target mailbox’ | fl name, *reject* 
+ 
+Find Mailbox Folder Stats on folder 
+Get-MailboxFolderStatistics ‘user@domain.com’ | Where { $_.FolderPath.Contains(“FolderName”) -eq $true } 
+ 
+Find Mailbox Folder Stats on folder and add permissions 
+ForEach($f in (Get-MailboxFolderStatistics John | Where { $_.FolderPath.Contains(“/Clients”) -eq $True } ) ) {$fname = “John:” + $f.FolderPath.Replace(“/”,”\”); Add-MailboxFolderPermission $fname -User Jane -AccessRights Reviewer } 
+ 
+Remember 
+Set-MailboxFolderPermission cmdlet only updates existing folder-level permissions for all folders within a user’s mailbox 
+Add-MailboxFolderPermission cmdlet adds new permissions to mailbox 
+ 
+View Send As permission (use display name) 
+Get-ADPermission ‘User Display name)’ | select user,extendedrights 
+ 
+Get AD Permission ‘not inherited’, like local domain users? 
+Get-Mailbox -identity ‘User Alias’ | Get-ADPermission | where {($_.IsInherited -eq $false) -and ($_.User -like “Test_USERS*”)} | select User, extendedrights 
+ 
+Get Mailbox Permission ‘not inherited’, like local domain users 
+Get-MailboxPermission -Identity user@domain.com | where {($_.IsInherited -eq $false) -and ($_.User -like “Test_USERS*”)} | select User,Accessrights | FT 
+ 
+Get AD Permission ‘not inherited’ 
+Get-Mailbox -identity ‘User Name’ | Get-ADPermission | where {($_.IsInherited -eq $false)} | select User, extendedrights 
+ 
+Get AD Permission ‘not inherited’, like local domain users 
+Get-Mailbox -identity ‘User Name’ | Get-ADPermission | where {($_.IsInherited -eq $false) -and ($_.User -like “Pilot*”)} | select User, extendedrights 
+ 
+Get Mailbox Permission ‘not inherited’, like local domain users? 
+Get-MailboxPermission -Identity user@domain.com | where {($_.IsInherited -eq $false) -and ($_.User -like “Pilot*”)} | select User,Accessrights | FT 
+ 
+Grant Read Only permissions 
+Add-MailboxPermission -Identity “User Name” -User “domain\user” -AccessRights ReadPermission 
+ 
+Remove Read Only permissions 
+remove-MailboxPermission -Identity “User Name” -User “domain\user” -AccessRights ReadPermission 
+ 
+Set Read Only Permisions to existing 
+Set-MailboxFolderPermission -Identity user@domain.com -User user@domain.com -AccessRights Reviewer 
+Set-MailboxFolderPermission -Identity user@domain.com -User ‘domain\user’ -AccessRights Reviewer 
+ 
+Grant Users full access permissions to mailboxes 
+Add-MailboxPermission -Identity user@domain.com -User ‘User’ -AccessRights FullAccess 
+ 
+Grant Full Access to a Room Mailbox 
+Add-MailboxPermission -Identity ‘Conference-Room’ -User ‘user@domain.com’ -AccessRights FullAccess 
+When you assign full access rights to a mailbox, you may notice that the change does not take effect immediately, and the user that has been granted permissions to a mailbox still cannot access that resource. This is because the Information Store service uses a cached mailbox configuration that by default is only refreshed every two hours. You can force the cache to refresh by restarting the Information Store service on the mailbox server that is hosting the active database where the mailbox resides. 
+ 
+Get ‘Send on Behalf of’ permissions 
+Get-Mailbox -identity ‘user@domain.com’ | fl name, grant* 
+ 
+Set Send on Behalf permissions 
+Set-Mailbox UserMailbox -GrantSendOnBehalfTo UserWhoSends 
+ 
+Remove Users full access permissions to mailboxes 
+Remove-MailboxPermission -Identity user1 -User user2 -AccessRights FullAccess -Confirm:$false 
+ 
+Grant Group full access permissions to mailbox 
+Add-MailboxPermission -Identity user -User “Help Desk” -AccessRights FullAccess 

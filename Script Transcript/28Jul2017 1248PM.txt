@@ -1,0 +1,112 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728124849
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7864
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 1248PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+$Session = New-PSSession -ComputerName $Computer -Credential $Credential
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+$Invoke = invoke-command -ComputerName $Computer -Credential $Credential -ScriptBlock {$Script}
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> clear
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> invoke-command -ComputerName MSSF01 -Credential $Credential -Scriptblock { hostname }
+[MSSF01] Connecting to remote server MSSF01 failed with the following error message : WinRM cannot process the request. 
+The following error occurred while using Kerberos authentication: Cannot find the computer MSSF01. Verify that the 
+computer exists on the network and that the name provided is spelled correctly. For more information, see the 
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSF01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : NetworkPathNotFound,PSSessionStateBroken
+[MSSF01] Connecting to remote server MSSF01 failed with the following error message : WinRM cannot process the
+request. The following error occurred while using Kerberos authentication: Cannot find the computer MSSF01. Verify
+that the computer exists on the network and that the name provided is spelled correctly. For more information, see the
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (MSSF01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : NetworkPathNotFound,PSSessionStateBroken
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script
+
+
+PC Name     : MSSDT04
+Domain      : mss.local
+Description : Intel(R) 82578DM Gigabit Network Connection
+IP Address  : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer  : 192.168.1.253
+MACAddress  : 6C:62:6D:5C:6A:36
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress | Out-File C:\Logs\script.txt
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = invoke-command -ComputerName $Computer -Credential $Credential -ScriptBlock {$Script}
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Credential -Computername $Computer | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+
+
+PC Name     : MSSFS01
+Domain      : mssit.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.249
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:02
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSDT01 with Credentials provided
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:93 char:3
++   Get-WmiObject Win32_NetworkAdapterConfiguration -Credential $Creden ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Get-WmiObject], COMException
+    + FullyQualifiedErrorId : GetWMICOMException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSDT01 with Credentials provided
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\aaron\Documents\WindowsPowerShell> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Connecting to MSSFS01 with Credentials provided
+
+
+PC Name     : MSSFS01
+Domain      : mssit.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.249
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:02
+
+
+

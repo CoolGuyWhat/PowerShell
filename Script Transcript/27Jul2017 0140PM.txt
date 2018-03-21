@@ -1,0 +1,78 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727134055
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3768
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0140PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $NIC | Select-Object -Property @{Name="PSComputerName";Expression={$_."Computer Name"}},DNSDomain,Description,IPAddress,DHCPServer,MACAddress
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name="PSComputerName";Expression={$_."Computer Name"}},DNSDomain,Description,IPAddress,DHCPServer,MACAddress
+
+
+
+PSComputerName :
+DNSDomain      : mss.local
+Description    : Intel(R) 82578DM Gigabit Network Connection
+IPAddress      : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer     : 192.168.1.253
+MACAddress     : 6C:62:6D:5C:6A:36
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $NIC = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null }
+PS C:\Users\aaron\Documents\WindowsPowerShell> $NIC | Select-Object -Property @{Name="Computer Name";Expression={$_."PSComputerName"}},,DNSDomain,Description,IPAddress,DHCPServer,MACAddress
+
+At line:1 char:89
++ ... rty @{Name="Computer Name";Expression={$_."PSComputerName"}},,DNSDoma ...
++                                                                  ~
+Missing expression after ',' in pipeline element.
+
+At line:1 char:89
++ ... ty @{Name="Computer Name";Expression={$_."PSComputerName"}},,DNSDomai ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:89
++ ... rty @{Name="Computer Name";Expression={$_."PSComputerName"}},,DNSDoma ...
++                                                                  ~
+Missing expression after ',' in pipeline element.
+
+At line:1 char:89
++ ... ty @{Name="Computer Name";Expression={$_."PSComputerName"}},,DNSDomai ...
++                                                                 ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpression
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $NIC = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null }
+$NIC | Select-Object -Property @{Name="Computer Name";Expression={$_."PSComputerName"}},DNSDomain,Description,IPAddress,DHCPServer,MACAddress
+
+
+
+Computer Name : MSSDT04
+DNSDomain     : mss.local
+Description   : Intel(R) 82578DM Gigabit Network Connection
+IPAddress     : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer    : 192.168.1.253
+MACAddress    : 6C:62:6D:5C:6A:36
+
+
+

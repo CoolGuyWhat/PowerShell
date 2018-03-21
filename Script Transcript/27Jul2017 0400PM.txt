@@ -1,0 +1,39 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170727160004
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3384
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\27Jul2017 0400PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> .\!Current\Remote-Details.ps1
+VERBOSE: Trying to Connect to MSSFS01 with Credentials provided
+VERBOSE: Successfully connected to MSSFS01!
+
+
+PC Name     : MSSDT04
+Domain      : mss.local
+Description : Intel(R) 82578DM Gigabit Network Connection
+IP Address  : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer  : 192.168.1.253
+MACAddress  : 6C:62:6D:5C:6A:36
+
+
+

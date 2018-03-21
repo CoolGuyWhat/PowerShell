@@ -1,0 +1,43 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170725115126
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13436
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Transcript\25Jul2017 1151AM.txt
+PS C:\> ping opendns.com
+
+Pinging openDNS.com [146.112.62.105] with 32 bytes of data:
+Reply from 146.112.62.105: bytes=32 time=226ms TTL=47
+Reply from 146.112.62.105: bytes=32 time=227ms TTL=47
+
+Ping statistics for 146.112.62.105:
+    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 226ms, Maximum = 227ms, Average = 226ms
+Control-C
+PS C:\> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\> ping www.opendns.com
+
+Pinging www.opendns.com [146.112.62.105] with 32 bytes of data:
+Reply from 146.112.62.105: bytes=32 time=237ms TTL=47
+Reply from 146.112.62.105: bytes=32 time=219ms TTL=47
+Reply from 146.112.62.105: bytes=32 time=220ms TTL=47
+Reply from 146.112.62.105: bytes=32 time=243ms TTL=47
+
+Ping statistics for 146.112.62.105:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 219ms, Maximum = 243ms, Average = 229ms

@@ -1,0 +1,68 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728084540
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12776
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 0845AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Enter-PSSession -Computer $Computer -Credential $Credential
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Scipt = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock $Script
+>> TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument 
+that is not null or empty, and then try the command again.
+At line:1 char:25
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                         ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument
+that is not null or empty, and then try the command again.
+At line:1 char:25
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                         ~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Session = New-PSSession -ComputerName $Computer -Credential $Credential
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock $Script
+>> TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+Invoke-Command : Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for 
+the argument, and then try running the command again.
+At line:1 char:47
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                                               ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'ScriptBlock'. The argument is null. Provide a valid value for
+the argument, and then try running the command again.
+At line:1 char:47
++ Invoke-Command -Session $Session -ScriptBlock $Script
++                                               ~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Invoke-Command -Session $Session -ScriptBlock {$Script}

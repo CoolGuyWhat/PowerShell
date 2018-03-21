@@ -1,0 +1,201 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170803144556
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 6124
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\03Aug2017 0245PM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\WINDOWS\system32> Import-Module ActiveDirectory
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "aprice" -Properties * | Select -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company
+"$Date
+$Deats" | Out-File C:\Get-ADUser.csv -Append
+PS C:\WINDOWS\system32> TerminatingError(Get-ADUser): "Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'."
+Get-ADUser : Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'.
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "aprice" -Properties * | Select -Proper ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (aprice:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'.
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "aprice" -Properties * | Select -Proper ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (aprice:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,M
+   icrosoft.ActiveDirectory.Management.Commands.GetADUser
+
+PS C:\WINDOWS\system32> Get-ADUser -Identity aprice
+>> TerminatingError(Get-ADUser): "Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'."
+Get-ADUser : Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'.
+At line:1 char:1
++ Get-ADUser -Identity aprice
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (aprice:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Cannot find an object with identity: 'aprice' under: 'DC=mss,DC=local'.
+At line:1 char:1
++ Get-ADUser -Identity aprice
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (aprice:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,M
+   icrosoft.ActiveDirectory.Management.Commands.GetADUser
+
+PS C:\WINDOWS\system32> Get-ADUser -identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local"
+
+
+DistinguishedName : CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local
+Enabled           : True
+GivenName         : Aaron
+Name              : Aaron Price
+ObjectClass       : user
+ObjectGUID        : 87b292bf-51e3-414a-a0e7-1ff63f65ba9c
+SamAccountName    : aaron
+SID               : S-1-5-21-3975149240-207678346-4041007783-1140
+Surname           : Price
+UserPrincipalName : aaron@mss.local
+
+
+
+PS C:\WINDOWS\system32> $Date = Get-Date
+
+$Deats = Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company
+
+"$Date
+
+$Deats" | Out-File C:\Get-ADUser.csv -Append
+PS C:\WINDOWS\system32> clear
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List
+"$Date
+$Deats" | Out-File C:\Get-ADUser.csv -Append
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List
+"$Date
+$Deats" | Export-Csv C:\Get-ADUser.csv -Append
+PS C:\WINDOWS\system32> clear
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List
+"$Date
+$Deats" | Out-File C:\Get-ADUser.txt -Append
+PS C:\WINDOWS\system32> $Deats | Export-CSV C:\Get-ADUser.csv -NoType
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv 
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price","Aaron Price","IT Support",,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection","West Perth","WA","6005","Australia",,,,,,,,"MSS IT"
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price","Aaron Price","IT Support",,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection","West Perth","WA","6005","Australia",,,,,,,,"MSS IT"
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv | Format-List
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price","Aaron Price","IT Support",,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection","West Perth","WA","6005","Australia",,,,,,,,"MSS IT"
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv 
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price","Aaron Price","IT Support",,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection","West Perth","WA","6005","Australia",,,,,,,,"MSS IT"
+PS C:\WINDOWS\system32> clear
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv | Format-Table
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price",,,,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection",,,,,,,,,,,,
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Convertto-csv | Format-List
+#TYPE Selected.Microsoft.ActiveDirectory.Management.ADUser
+"givenName","surname","displayName","description","office","telephoneNumber","mail","wWWHomePage","streetAddress","postOfficeBox","City","State","postalCode","co","homePhone","Pager","mobile","fax","ipPhone","title","Department","Company"
+"Aaron","Price",,,,,,,,"Microsoft.ActiveDirectory.Management.ADPropertyValueCollection",,,,,,,,,,,,
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List
+
+
+givenName       : Aaron
+surname         : Price
+displayName     :
+description     :
+office          :
+telephoneNumber :
+mail            :
+wWWHomePage     :
+streetAddress   :
+postOfficeBox   : {}
+City            :
+State           :
+postalCode      :
+co              :
+homePhone       :
+Pager           :
+mobile          :
+fax             :
+ipPhone         :
+title           :
+Department      :
+Company         :
+
+
+
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List | Export-csv C:\Luke1.csv
+PS C:\WINDOWS\system32> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Export-csv C:\Luke1.csv
+PS C:\WINDOWS\system32> clear
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company
+"$Date
+$Deats" | Export-CSV C:\Luke2.csv
+PS C:\WINDOWS\system32> TerminatingError(Get-ADUser): "Cannot find an object with identity: 'OU=Support,OU=Users,OU=MSS,DC=mss,DC=local' under: 'DC=mss,DC=local'."
+Get-ADUser : Cannot find an object with identity: 'OU=Support,OU=Users,OU=MSS,DC=mss,DC=local' under: 'DC=mss,DC=local'.
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "OU=Support,OU=Users,OU=MSS,DC=mss,DC=l ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (OU=Support,OU=U...DC=mss,DC=local:ADUser) [Get-ADUser], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Cannot find an object with identity: 'OU=Support,OU=Users,OU=MSS,DC=mss,DC=local' under:
+'DC=mss,DC=local'.
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "OU=Support,OU=Users,OU=MSS,DC=mss,DC=l ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (OU=Support,OU=U...DC=mss,DC=local:ADUser) [Get-ADUser], ADIdentityNotFo
+   undException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,M
+   icrosoft.ActiveDirectory.Management.Commands.GetADUser
+
+PS C:\WINDOWS\system32> $Date = Get-Date
+$Deats = Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company
+"$Date
+$Deats" | Export-CSV C:\Get-ADUser.txt -Append
+PS C:\WINDOWS\system32> TerminatingError(Get-ADUser): "Directory object not found"
+Get-ADUser : Directory object not found
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC= ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*OU=Support,OU=...DC=mss,DC=local:ADUser) [Get-ADUser], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Directory object not found
+At line:2 char:10
++ $Deats = Get-ADUser -Identity "*OU=Support,OU=Users,OU=MSS,DC=mss,DC= ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*OU=Support,OU=...DC=mss,DC=local:ADUser) [Get-ADUser], ADIdentityNotFo
+   undException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,M
+   icrosoft.ActiveDirectory.Management.Commands.GetADUser
+

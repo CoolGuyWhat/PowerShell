@@ -1,0 +1,485 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170713154646
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8716
+PSVersion: 5.1.14393.1358
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.1358
+BuildVersion: 10.0.14393.1358
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\13Jul2017 0346PM.txt
+PS C:\> Get-EventLog -LogName System | gm
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-GroupPolicy/1500
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-Kernel-General/16
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-Kernel-General/15
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-GroupPolicy/1501
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/EventLog/2147489661
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-WindowsUpdateClient/19
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-WindowsUpdateClient/43
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-WindowsUpdateClient/44
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-DNS-Client/1014
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/DCOM/10016
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Service Control Manager/1073748864
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+EventID                   ScriptProperty System.Object EventID {get=$this.get_EventID() -band 0xFFFF;}
+
+
+   TypeName: System.Diagnostics.EventLogEntry#System/Microsoft-Windows-FilterManager/4
+
+Name                      MemberType     Definition
+----                      ----------     ----------
+Disposed                  Event          System.EventHandler Disposed(System.Object, System.EventArgs)
+CreateObjRef              Method         System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method         void Dispose(), void IDisposable.Dispose()
+Equals                    Method         bool Equals(System.Diagnostics.EventLogEntry otherEntry), bool Equals(Syste...
+GetHashCode               Method         int GetHashCode()
+GetLifetimeService        Method         System.Object GetLifetimeService()
+GetObjectData             Method         void ISerializable.GetObjectData(System.Runtime.Serialization.Serialization...
+GetType                   Method         type GetType()
+InitializeLifetimeService Method         System.Object InitializeLifetimeService()
+ToString                  Method         string ToString()
+Category                  Property       string Category {get;}
+CategoryNumber            Property       int16 CategoryNumber {get;}
+Container                 Property       System.ComponentModel.IContainer Container {get;}
+Data                      Property       byte[] Data {get;}
+EntryType                 Property       System.Diagnostics.EventLogEntryType EntryType {get;}
+Index                     Property       int Index {get;}
+InstanceId                Property       long InstanceId {get;}
+MachineName               Property       string MachineName {get;}
+Message                   Property       string Message {get;}
+ReplacementStrings        Property       string[] ReplacementStrings {get;}
+Site                      Property       System.ComponentModel.ISite Site {get;set;}
+Source                    Property       string Source {get;}
+TimeGenerated             Property       datetime TimeGenerated {get;}
+TimeWritten               Property       datetime TimeWritten {get;}
+UserName                  Property       string UserName {get;}
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\> Get-EventLog -LogName * | gm
+
+
+   TypeName: System.Diagnostics.EventLog
+
+Name                      MemberType Definition
+----                      ---------- ----------
+Disposed                  Event      System.EventHandler Disposed(System.Object, System.EventArgs)
+EntryWritten              Event      System.Diagnostics.EntryWrittenEventHandler EntryWritten(System.Object, System....
+BeginInit                 Method     void BeginInit(), void ISupportInitialize.BeginInit()
+Clear                     Method     void Clear()
+Close                     Method     void Close()
+CreateObjRef              Method     System.Runtime.Remoting.ObjRef CreateObjRef(type requestedType)
+Dispose                   Method     void Dispose(), void IDisposable.Dispose()
+EndInit                   Method     void EndInit(), void ISupportInitialize.EndInit()
+Equals                    Method     bool Equals(System.Object obj)
+GetHashCode               Method     int GetHashCode()
+GetLifetimeService        Method     System.Object GetLifetimeService()
+GetType                   Method     type GetType()
+InitializeLifetimeService Method     System.Object InitializeLifetimeService()
+ModifyOverflowPolicy      Method     void ModifyOverflowPolicy(System.Diagnostics.OverflowAction action, int retenti...
+RegisterDisplayName       Method     void RegisterDisplayName(string resourceFile, long resourceId)
+ToString                  Method     string ToString()
+WriteEntry                Method     void WriteEntry(string message), void WriteEntry(string message, System.Diagnos...
+WriteEvent                Method     void WriteEvent(System.Diagnostics.EventInstance instance, Params System.Object...
+Container                 Property   System.ComponentModel.IContainer Container {get;}
+EnableRaisingEvents       Property   bool EnableRaisingEvents {get;set;}
+Entries                   Property   System.Diagnostics.EventLogEntryCollection Entries {get;}
+Log                       Property   string Log {get;set;}
+LogDisplayName            Property   string LogDisplayName {get;}
+MachineName               Property   string MachineName {get;set;}
+MaximumKilobytes          Property   long MaximumKilobytes {get;set;}
+MinimumRetentionDays      Property   int MinimumRetentionDays {get;}
+OverflowAction            Property   System.Diagnostics.OverflowAction OverflowAction {get;}
+Site                      Property   System.ComponentModel.ISite Site {get;set;}
+Source                    Property   string Source {get;set;}
+SynchronizingObject       Property   System.ComponentModel.ISynchronizeInvoke SynchronizingObject {get;set;}
+
+
+PS C:\> Get-EventLog -Logname System -EntryType Error -Newest 20
+
+   Index Time          EntryType   Source                 InstanceID Message
+   ----- ----          ---------   ------                 ---------- -------
+    2597 Jul 12 16:12  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2588 Jul 12 14:16  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2534 Jul 12 09:35  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2533 Jul 12 08:26  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2504 Jul 11 16:25  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2496 Jul 11 13:03  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2495 Jul 11 12:54  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2469 Jul 10 16:58  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2462 Jul 10 12:27  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2459 Jul 10 11:09  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2302 Jul 07 16:18  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2292 Jul 07 11:31  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2290 Jul 07 11:15  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2279 Jul 07 08:51  Error       DCOM                        10010 The description for Event ID '10010' in Source ...
+    2245 Jul 06 16:22  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2232 Jul 06 11:15  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2207 Jul 05 16:25  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2200 Jul 05 12:39  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2196 Jul 05 11:55  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+    2187 Jul 05 10:53  Error       DCOM                        10016 The description for Event ID '10016' in Source ...
+
+
+PS C:\> Get-EventLog -Logname Application -EntryType Error -Newest 20
+
+   Index Time          EntryType   Source                 InstanceID Message
+   ----- ----          ---------   ------                 ---------- -------
+  883927 Jul 13 15:25  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  880750 Jul 13 14:32  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  878035 Jul 13 13:47  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  875689 Jul 13 13:08  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  875271 Jul 13 13:01  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 504 from the server. This might indicate that action is necessary.
+  840435 Jul 13 03:21  Error       SideBySide             3238068259 Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\Office15\lync.exe.Manifest".Error in manifest or policy file "C:\Program Files (x86)\Microsoft Office\Office15\UccAp...
+  834760 Jul 13 01:46  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  825818 Jul 12 23:18  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  812459 Jul 12 19:35  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+  811335 Jul 12 19:16  Error       Sophos Management...   2147491649 The Sophos Management Communications System client service has received an HTTP status 503 from the server. This might indicate that action is necessary.
+
+

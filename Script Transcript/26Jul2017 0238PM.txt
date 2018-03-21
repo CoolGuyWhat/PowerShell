@@ -1,0 +1,437 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170726143801
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 2124
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\26Jul2017 0238PM.txt
+ Windows Powershell | MSS IT
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd .\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+VERBOSE: Connection attempted and failed at 07/26/2017 14:38:40
+  Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+VERBOSE: Connection attempted and failed at 07/26/2017 14:40:20
+                 Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+VERBOSE: Connection attempted and failed at 07/26/2017 14:54:50
+  Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+VERBOSE: Connection attempted and failed at 07/26/2017 14:55:54
+         Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+VERBOSE: Connection attempted and failed at 07/26/2017 15:00:51
+         Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03  
+         Connection attempted and failed at 07/26/2017 15:02:43
+         Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Out-File): "Could not find a part of the path 'C:\Logs\RemoteDetails.log'."
+Out-File : Could not find a part of the path 'C:\Logs\RemoteDetails.log'.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:86 char:19
++   $ErrorMessage | Out-File C:\Logs\RemoteDetails.log -Append
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+Out-File : Could not find a part of the path 'C:\Logs\RemoteDetails.log'.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:86 char:19
++   $ErrorMessage | Out-File C:\Logs\RemoteDetails.log -Append
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> alias
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           % -> ForEach-Object
+Alias           ? -> Where-Object
+Alias           ac -> Add-Content
+Alias           asnp -> Add-PSSnapin
+Alias           cat -> Get-Content
+Alias           cd -> Set-Location
+Alias           CFS -> ConvertFrom-String                          3.1.0.0    Microsoft.PowerShell.Utility
+Alias           chdir -> Set-Location
+Alias           clc -> Clear-Content
+Alias           clear -> Clear-Host
+Alias           clhy -> Clear-History
+Alias           cli -> Clear-Item
+Alias           clp -> Clear-ItemProperty
+Alias           cls -> Clear-Host
+Alias           clv -> Clear-Variable
+Alias           cnsn -> Connect-PSSession
+Alias           compare -> Compare-Object
+Alias           copy -> Copy-Item
+Alias           cp -> Copy-Item
+Alias           cpi -> Copy-Item
+Alias           cpp -> Copy-ItemProperty
+Alias           curl -> Invoke-WebRequest
+Alias           cvpa -> Convert-Path
+Alias           dbp -> Disable-PSBreakpoint
+Alias           del -> Remove-Item
+Alias           diff -> Compare-Object
+Alias           dir -> Get-ChildItem
+Alias           dnsn -> Disconnect-PSSession
+Alias           ebp -> Enable-PSBreakpoint
+Alias           echo -> Write-Output
+Alias           epal -> Export-Alias
+Alias           epcsv -> Export-Csv
+Alias           epsn -> Export-PSSession
+Alias           erase -> Remove-Item
+Alias           etsn -> Enter-PSSession
+Alias           exsn -> Exit-PSSession
+Alias           fc -> Format-Custom
+Alias           fhx -> Format-Hex                                  3.1.0.0    Microsoft.PowerShell.Utility
+Alias           fl -> Format-List
+Alias           foreach -> ForEach-Object
+Alias           ft -> Format-Table
+Alias           fw -> Format-Wide
+Alias           gal -> Get-Alias
+Alias           gbp -> Get-PSBreakpoint
+Alias           gc -> Get-Content
+Alias           gcb -> Get-Clipboard                               3.1.0.0    Microsoft.PowerShell.Management
+Alias           gci -> Get-ChildItem
+Alias           gcm -> Get-Command
+Alias           gcs -> Get-PSCallStack
+Alias           gdr -> Get-PSDrive
+Alias           gh -> Get-Help
+Alias           ghy -> Get-History
+Alias           gi -> Get-Item
+Alias           gin -> Get-ComputerInfo                            3.1.0.0    Microsoft.PowerShell.Management
+Alias           gjb -> Get-Job
+Alias           gl -> Get-Location
+Alias           gm -> Get-Member
+Alias           gmo -> Get-Module
+Alias           gp -> Get-ItemProperty
+Alias           gps -> Get-Process
+Alias           gpv -> Get-ItemPropertyValue
+Alias           group -> Group-Object
+Alias           gsn -> Get-PSSession
+Alias           gsnp -> Get-PSSnapin
+Alias           gsv -> Get-Service
+Alias           gtz -> Get-TimeZone                                3.1.0.0    Microsoft.PowerShell.Management
+Alias           gu -> Get-Unique
+Alias           gv -> Get-Variable
+Alias           gwmi -> Get-WmiObject
+Alias           h -> Get-History
+Alias           history -> Get-History
+Alias           icm -> Invoke-Command
+Alias           iex -> Invoke-Expression
+Alias           ihy -> Invoke-History
+Alias           ii -> Invoke-Item
+Alias           ipal -> Import-Alias
+Alias           ipcsv -> Import-Csv
+Alias           ipmo -> Import-Module
+Alias           ipsn -> Import-PSSession
+Alias           irm -> Invoke-RestMethod
+Alias           ise -> powershell_ise.exe
+Alias           iwmi -> Invoke-WmiMethod
+Alias           iwr -> Invoke-WebRequest
+Alias           kill -> Stop-Process
+Alias           lp -> Out-Printer
+Alias           ls -> Get-ChildItem
+Alias           man -> help
+Alias           md -> mkdir
+Alias           measure -> Measure-Object
+Alias           mi -> Move-Item
+Alias           mount -> New-PSDrive
+Alias           move -> Move-Item
+Alias           mp -> Move-ItemProperty
+Alias           mv -> Move-Item
+Alias           nal -> New-Alias
+Alias           ndr -> New-PSDrive
+Alias           ni -> New-Item
+Alias           nmo -> New-Module
+Alias           npssc -> New-PSSessionConfigurationFile
+Alias           nsn -> New-PSSession
+Alias           nv -> New-Variable
+Alias           ogv -> Out-GridView
+Alias           oh -> Out-Host
+Alias           popd -> Pop-Location
+Alias           ps -> Get-Process
+Alias           pushd -> Push-Location
+Alias           pwd -> Get-Location
+Alias           r -> Invoke-History
+Alias           rbp -> Remove-PSBreakpoint
+Alias           rcjb -> Receive-Job
+Alias           rcsn -> Receive-PSSession
+Alias           rd -> Remove-Item
+Alias           rdr -> Remove-PSDrive
+Alias           ren -> Rename-Item
+Alias           ri -> Remove-Item
+Alias           rjb -> Remove-Job
+Alias           rm -> Remove-Item
+Alias           rmdir -> Remove-Item
+Alias           rmo -> Remove-Module
+Alias           rni -> Rename-Item
+Alias           rnp -> Rename-ItemProperty
+Alias           rp -> Remove-ItemProperty
+Alias           rsn -> Remove-PSSession
+Alias           rsnp -> Remove-PSSnapin
+Alias           rujb -> Resume-Job
+Alias           rv -> Remove-Variable
+Alias           rvpa -> Resolve-Path
+Alias           rwmi -> Remove-WmiObject
+Alias           sajb -> Start-Job
+Alias           sal -> Set-Alias
+Alias           saps -> Start-Process
+Alias           sasv -> Start-Service
+Alias           sbp -> Set-PSBreakpoint
+Alias           sc -> Set-Content
+Alias           scb -> Set-Clipboard                               3.1.0.0    Microsoft.PowerShell.Management
+Alias           select -> Select-Object
+Alias           set -> Set-Variable
+Alias           shcm -> Show-Command
+Alias           si -> Set-Item
+Alias           sl -> Set-Location
+Alias           sleep -> Start-Sleep
+Alias           sls -> Select-String
+Alias           sort -> Sort-Object
+Alias           sp -> Set-ItemProperty
+Alias           spjb -> Stop-Job
+Alias           spps -> Stop-Process
+Alias           spsv -> Stop-Service
+Alias           start -> Start-Process
+Alias           stz -> Set-TimeZone                                3.1.0.0    Microsoft.PowerShell.Management
+Alias           sujb -> Suspend-Job
+Alias           sv -> Set-Variable
+Alias           swmi -> Set-WmiInstance
+Alias           tee -> Tee-Object
+Alias           trcm -> Trace-Command
+Alias           type -> Get-Content
+Alias           wget -> Invoke-WebRequest
+Alias           where -> Where-Object
+Alias           wjb -> Wait-Job
+Alias           write -> Write-Output
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> gin
+
+
+WindowsBuildLabEx                                       : 15063.0.amd64fre.rs2_release.170317-1834
+WindowsCurrentVersion                                   : 6.3
+WindowsEditionId                                        : Professional
+WindowsInstallationType                                 : Client
+WindowsInstallDateFromRegistry                          : 13/07/2017 12:37:09 PM
+WindowsProductId                                        : 00331-20020-00000-AA352
+WindowsProductName                                      : Windows 10 Pro
+WindowsRegisteredOrganization                           :
+WindowsRegisteredOwner                                  : Windows User
+WindowsSystemRoot                                       : C:\WINDOWS
+WindowsVersion                                          : 1703
+BiosCharacteristics                                     : {7, 9, 11, 12...}
+BiosBIOSVersion                                         : {HPQOEM - 20100609}
+BiosBuildNumber                                         :
+BiosCaption                                             : Default System BIOS
+BiosCodeSet                                             :
+BiosCurrentLanguage                                     : en|US|iso8859-1
+BiosDescription                                         : Default System BIOS
+BiosEmbeddedControllerMajorVersion                      : 255
+BiosEmbeddedControllerMinorVersion                      : 255
+BiosFirmwareType                                        : Bios
+BiosIdentificationCode                                  :
+BiosInstallableLanguages                                : 1
+BiosInstallDate                                         :
+BiosLanguageEdition                                     :
+BiosListOfLanguages                                     : {en|US|iso8859-1}
+BiosManufacturer                                        : Hewlett-Packard
+BiosName                                                : Default System BIOS
+BiosOtherTargetOS                                       :
+BiosPrimaryBIOS                                         : True
+BiosReleaseDate                                         : 9/06/2010 8:00:00 AM
+BiosSeralNumber                                         : AUD0330888
+BiosSMBIOSBIOSVersion                                   : 786H1 v01.05
+BiosSMBIOSMajorVersion                                  : 2
+BiosSMBIOSMinorVersion                                  : 6
+BiosSMBIOSPresent                                       : True
+BiosSoftwareElementState                                : Running
+BiosStatus                                              : OK
+BiosSystemBiosMajorVersion                              : 1
+BiosSystemBiosMinorVersion                              : 5
+BiosTargetOperatingSystem                               : 0
+BiosVersion                                             : HPQOEM - 20100609
+CsAdminPasswordStatus                                   : Disabled
+CsAutomaticManagedPagefile                              : True
+CsAutomaticResetBootOption                              : True
+CsAutomaticResetCapability                              : True
+CsBootOptionOnLimit                                     :
+CsBootOptionOnWatchDog                                  :
+CsBootROMSupported                                      : True
+CsBootStatus                                            : {0, 0, 0, 27...}
+CsBootupState                                           : Normal boot
+CsCaption                                               : MSSDT04
+CsChassisBootupState                                    : Safe
+CsChassisSKUNumber                                      :
+CsCurrentTimeZone                                       : 480
+CsDaylightInEffect                                      :
+CsDescription                                           : AT/AT COMPATIBLE
+CsDNSHostName                                           : MSSDT04
+CsDomain                                                : mss.local
+CsDomainRole                                            : MemberWorkstation
+CsEnableDaylightSavingsTime                             : True
+CsFrontPanelResetStatus                                 : NotImplemented
+CsHypervisorPresent                                     : False
+CsInfraredSupported                                     : False
+CsInitialLoadInfo                                       :
+CsInstallDate                                           :
+CsKeyboardPasswordStatus                                : NotImplemented
+CsLastLoadInfo                                          :
+CsManufacturer                                          : Hewlett-Packard
+CsModel                                                 : HP Compaq 8100 Elite SFF PC
+CsName                                                  : MSSDT04
+CsNetworkAdapters                                       : {Ethernet}
+CsNetworkServerModeEnabled                              : True
+CsNumberOfLogicalProcessors                             : 4
+CsNumberOfProcessors                                    : 1
+CsProcessors                                            : {Intel(R) Core(TM) i5 CPU         650  @ 3.20GHz}
+CsOEMStringArray                                        : {ABS 70/71 60 61 62 63}
+CsPartOfDomain                                          : True
+CsPauseAfterReset                                       : -1
+CsPCSystemType                                          : Desktop
+CsPCSystemTypeEx                                        : Desktop
+CsPowerManagementCapabilities                           :
+CsPowerManagementSupported                              :
+CsPowerOnPasswordStatus                                 : Disabled
+CsPowerState                                            : Unknown
+CsPowerSupplyState                                      : Safe
+CsPrimaryOwnerContact                                   :
+CsPrimaryOwnerName                                      : Windows User
+CsResetCapability                                       : Other
+CsResetCount                                            : -1
+CsResetLimit                                            : -1
+CsRoles                                                 : {LM_Workstation, LM_Server, NT, Potential_Browser}
+CsStatus                                                : OK
+CsSupportContactDescription                             :
+CsSystemFamily                                          : 103C_53307F
+CsSystemSKUNumber                                       : WM194PA#ABG
+CsSystemType                                            : x64-based PC
+CsThermalState                                          : Safe
+CsTotalPhysicalMemory                                   : 8379432960
+CsPhyicallyInstalledMemory                              : 8388608
+CsUserName                                              : MSS\aaron
+CsWakeUpType                                            : PowerSwitch
+CsWorkgroup                                             :
+OsName                                                  : Microsoft Windows 10 Pro
+OsType                                                  : WINNT
+OsOperatingSystemSKU                                    : 48
+OsVersion                                               : 10.0.15063
+OsCSDVersion                                            :
+OsBuildNumber                                           : 15063
+OsHotFixes                                              : {KB4022405, KB4025376, KB4025342}
+OsBootDevice                                            : \Device\HarddiskVolume1
+OsSystemDevice                                          : \Device\HarddiskVolume2
+OsSystemDirectory                                       : C:\WINDOWS\system32
+OsSystemDrive                                           : C:
+OsWindowsDirectory                                      : C:\WINDOWS
+OsCountryCode                                           : 61
+OsCurrentTimeZone                                       : 480
+OsLocaleID                                              : 0c09
+OsLocale                                                : en-AU
+OsLocalDateTime                                         : 26/07/2017 3:03:37 PM
+OsLastBootUpTime                                        : 21/07/2017 10:55:31 AM
+OsUptime                                                : 5.04:08:05.1907226
+OsBuildType                                             : Multiprocessor Free
+OsCodeSet                                               : 1252
+OsDataExecutionPreventionAvailable                      : True
+OsDataExecutionPrevention32BitApplications              : True
+OsDataExecutionPreventionDrivers                        : True
+OsDataExecutionPreventionSupportPolicy                  : OptIn
+OsDebug                                                 : False
+OsDistributed                                           : False
+OsEncryptionLevel                                       : 256
+OsForegroundApplicationBoost                            : Maximum
+OsTotalVisibleMemorySize                                : 8183040
+OsFreePhysicalMemory                                    : 2231772
+OsTotalVirtualMemorySize                                : 10924456
+OsFreeVirtualMemory                                     : 1499100
+OsInUseVirtualMemory                                    : 9425356
+OsTotalSwapSpaceSize                                    :
+OsSizeStoredInPagingFiles                               : 2741416
+OsFreeSpaceInPagingFiles                                : 2696832
+OsPagingFiles                                           : {C:\pagefile.sys}
+OsHardwareAbstractionLayer                              : 10.0.15063.0
+OsInstallDate                                           : 13/07/2017 8:37:09 PM
+OsManufacturer                                          : Microsoft Corporation
+OsMaxNumberOfProcesses                                  : 4294967295
+OsMaxProcessMemorySize                                  : 137438953344
+OsMuiLanguages                                          : {en-US}
+OsNumberOfLicensedUsers                                 : 0
+OsNumberOfProcesses                                     : 206
+OsNumberOfUsers                                         : 13
+OsOrganization                                          :
+OsArchitecture                                          : 64-bit
+OsLanguage                                              : en-US
+OsProductSuites                                         : {TerminalServicesSingleSession}
+OsOtherTypeDescription                                  :
+OsPAEEnabled                                            :
+OsPortableOperatingSystem                               : False
+OsPrimary                                               : True
+OsProductType                                           : WorkStation
+OsRegisteredUser                                        : Windows User
+OsSerialNumber                                          : 00331-20020-00000-AA352
+OsServicePackMajorVersion                               : 0
+OsServicePackMinorVersion                               : 0
+OsStatus                                                : OK
+OsSuites                                                : {TerminalServices, TerminalServicesSingleSession}
+OsServerLevel                                           :
+KeyboardLayout                                          : en-US
+TimeZone                                                : (UTC+08:00) Perth
+LogonServer                                             : \\MSSITDC02
+PowerPlatformRole                                       : Desktop
+HyperVisorPresent                                       : False
+HyperVRequirementDataExecutionPreventionAvailable       : True
+HyperVRequirementSecondLevelAddressTranslation          : True
+HyperVRequirementVirtualizationFirmwareEnabled          : False
+HyperVRequirementVMMonitorModeExtensions                : True
+DeviceGuardSmartStatus                                  : Off
+DeviceGuardRequiredSecurityProperties                   :
+DeviceGuardAvailableSecurityProperties                  :
+DeviceGuardSecurityServicesConfigured                   :
+DeviceGuardSecurityServicesRunning                      :
+DeviceGuardCodeIntegrityPolicyEnforcementStatus         :
+DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus :
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> clear
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server exit failed with the following error message : WinRM cannot process the request. The following error occurred while using Kerberos authentication: Cannot find the computer exit. Verify that the computer exists on the network and that the name provided is spelled correctly. For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to exit  
+         Connection attempted and failed at 07/26/2017 15:15:09
+         Error log Written to C:\Logs\RemoteDetails.Log
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Out-File): "Could not find a part of the path 'C:\Logs\RemoteDetails.log'."
+Out-File : Could not find a part of the path 'C:\Logs\RemoteDetails.log'.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:86 char:19
++   $ErrorMessage | Out-File C:\Logs\RemoteDetails.log -Append
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+Out-File : Could not find a part of the path 'C:\Logs\RemoteDetails.log'.
+At C:\Users\aaron\Documents\WindowsPowerShell\!Current\Remote-Details.ps1:86 char:19
++   $ErrorMessage | Out-File C:\Logs\RemoteDetails.log -Append
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+

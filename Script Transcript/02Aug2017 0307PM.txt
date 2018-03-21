@@ -1,0 +1,81 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170802150712
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\WINDOWS\Sysnative\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7856
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\02Aug2017 0307PM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> Import-Module ActiveDirectory
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Date = Get-Date
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Deats = Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company
+PS C:\Users\aaron\Documents\WindowsPowerShell> 
+ : The term '' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ 
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ : The term '' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ 
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> clear
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-List
+
+
+givenName       : Aaron
+surname         : Price
+displayName     : Aaron Price
+description     : IT Support
+office          :
+telephoneNumber :
+mail            :
+wWWHomePage     :
+streetAddress   :
+postOfficeBox   : {}
+City            : West Perth
+State           : WA
+postalCode      : 6005
+co              : Australia
+homePhone       :
+Pager           :
+mobile          :
+fax             :
+ipPhone         :
+title           :
+Department      :
+Company         : MSS IT
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-ADUser -Identity "CN=Aaron Price,OU=Support,OU=Users,OU=MSS,DC=mss,DC=local" -Properties * | Select-Object -Property givenName,surname,displayName,description,office,telephoneNumber,mail,wWWHomePage,streetAddress,postOfficeBox,City,State,postalCode,co,homePhone,Pager,mobile,fax,ipPhone,title,Department,Company | Format-table
+
+givenName surname displayName description office telephoneNumber mail wWWHomePage streetAddress postOfficeBox
+--------- ------- ----------- ----------- ------ --------------- ---- ----------- ------------- -------------
+Aaron     Price   Aaron Price IT Support                                                        {}
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> clear

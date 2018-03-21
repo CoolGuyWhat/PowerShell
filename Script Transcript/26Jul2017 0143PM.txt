@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170726134320
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 5948
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\26Jul2017 0143PM.txt
+ Windows Powershell | MSS IT
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd .\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server mssdt03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server mssdt03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server mssdt03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+-Message Could not Connect to mssdt03
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> $VerbosePreference
+SilentlyContinue
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> $VerbosePreference
+SilentlyContinue
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(Enter-PSSession): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Connecting to remote server MSSDT03 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help topic."
+VERBOSE: Could not Connect to MSSDT03
+WARNING: Could not Connect
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> exit
+**********************
+Windows PowerShell transcript end
+End time: 20170726140049
+**********************

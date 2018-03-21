@@ -1,0 +1,96 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170718120705
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7632
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\WindowsPowerShell\Transcript\18Jul2017 1207PM.txt
+PS C:\> $Date = Get-Date -format g
+PS C:\> $Date.addHours(-1)
+Method invocation failed because [System.String] does not contain a method named 'addHours'.
+At line:1 char:1
++ $Date.addHours(-1)
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : MethodNotFound
+Method invocation failed because [System.String] does not contain a method named 'addHours'.
+At line:1 char:1
++ $Date.addHours(-1)
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : MethodNotFound
+
+PS C:\> (get-date).AddDays(-1).ToString
+
+OverloadDefinitions
+-------------------
+string ToString()
+string ToString(string format)
+string ToString(System.IFormatProvider provider)
+string ToString(string format, System.IFormatProvider provider)
+string IFormattable.ToString(string format, System.IFormatProvider formatProvider)
+string IConvertible.ToString(System.IFormatProvider provider)
+
+
+
+PS C:\> (get-date).AddDays(-1).ToString("yyyMMdd")
+20170717
+PS C:\> (get-date).AddDays(-1).ToString(g)
+At line:1 char:33
++ (get-date).AddDays(-1).ToString(g)
++                                 ~
+Missing ')' in method call.
+
+At line:1 char:33
++ (get-date).AddDays(-1).ToString(g)
++                                 ~
+Unexpected token 'g' in expression or statement.
+
+At line:1 char:34
++ (get-date).AddDays(-1).ToString(g)
++                                  ~
+Unexpected token ')' in expression or statement.
+At line:1 char:33
++ (get-date).AddDays(-1).ToString(g)
++                                 ~
+Missing ')' in method call.
+
+At line:1 char:33
++ (get-date).AddDays(-1).ToString(g)
++                                 ~
+Unexpected token 'g' in expression or statement.
+
+At line:1 char:34
++ (get-date).AddDays(-1).ToString(g)
++                                  ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+
+PS C:\> Get-Date $(Get-Date).addhour(-1) -Format g
+Method invocation failed because [System.DateTime] does not contain a method named 'addhour'.
+At line:1 char:12
++ Get-Date $(Get-Date).addhour(-1) -Format g
++            ~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : MethodNotFound
+Method invocation failed because [System.DateTime] does not contain a method named 'addhour'.
+At line:1 char:12
++ Get-Date $(Get-Date).addhour(-1) -Format g
++            ~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : MethodNotFound
+
+PS C:\> Get-Date $(Get-Date).addhours(-1) -Format g
+18/07/2017 11:12 AM

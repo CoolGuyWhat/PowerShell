@@ -1,0 +1,118 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170728102941
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13736
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\28Jul2017 1029AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Computer = Read-Host "Enter Computer Name"
+$Credential = Get-Credential -Message "Administrator Credentials are required for this Action "-UserName 'MSS\mss'
+$Session = New-PSSession -ComputerName $Computer -Credential $Credential
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = { Hostname | Format-List * -Force }
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = Invoke-Command -ComputerName $Computer -Credential $Credential -ScriptBlock $Script
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+
+
+Length : 7
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = { Hostname | Format-List }
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+
+
+Length : 7
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = { Hostname }
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+
+
+Length : 7
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = Invoke-Command -ComputerName $Computer -Credential $Credential -ScriptBlock $Script
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+MSSFS01
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object -Property @{Name='PC Name';Expression={$_.'PSComputerName'}},@{Name='Domain';Expression={$_.'DNSDomain'}},@{Name='Description';Expression={$_.'Description'}},@{Name='IP Address';Expression={$_.'IPAddress'}},DHCPServer,MACAddress
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = invoke-command -Session $Session -Credential $Credential -ScriptBlock {$Script}
+
+>> TerminatingError(Invoke-Command): "Parameter set cannot be resolved using the specified named parameters."
+Invoke-Command : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:11
++ $Invoke = invoke-command -Session $Session -Credential $Credential -S ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Parameter set cannot be resolved using the specified named parameters.
+At line:1 char:11
++ $Invoke = invoke-command -Session $Session -Credential $Credential -S ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke = Invoke-Command -ComputerName $Computer -Credential $Credential -Scriptblock {$Script}
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Script
+
+
+PC Name     : MSSDT04
+Domain      : mss.local
+Description : Intel(R) 82578DM Gigabit Network Connection
+IP Address  : {192.168.1.122, fe80::c9a:2c93:4146:83bc}
+DHCPServer  : 192.168.1.253
+MACAddress  : 6C:62:6D:5C:6A:36
+
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> $Invoke
+PS C:\Users\aaron\Documents\WindowsPowerShell> tcm mssdt01
+tcm : The term 'tcm' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ tcm mssdt01
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (tcm:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+tcm : The term 'tcm' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ tcm mssdt01
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (tcm:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> tnc mssdt01
+WARNING: Ping to 192.168.1.100 failed with status: DestinationHostUnreachable
+
+
+ComputerName           : mssdt01
+RemoteAddress          : 192.168.1.100
+InterfaceAlias         : Ethernet
+SourceAddress          : 192.168.1.122
+PingSucceeded          : False
+PingReplyDetails (RTT) : 0 ms
+
+
+

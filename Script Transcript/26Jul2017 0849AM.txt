@@ -1,0 +1,316 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170726084949
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14396
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\26Jul2017 0849AM.txt
+ Windows Powershell | MSS IT
+PS C:\> gh New-PSSession
+
+NAME
+    New-PSSession
+
+SYNOPSIS
+    Creates a persistent connection to a local or remote computer.
+
+
+SYNTAX
+    New-PSSession [-ConnectionUri] <Uri[]> [-AllowRedirection] [-Authentication {Default | Basic | Negotiate |
+    NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>]
+    [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-Name <String[]>]
+    [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    New-PSSession [[-ComputerName] <String[]>] [-ApplicationName <String>] [-Authentication {Default | Basic |
+    Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>]
+    [-ConfigurationName <String>] [-Credential <PSCredential>] [-EnableNetworkAccess] [-Name <String[]>] [-Port
+    <Int32>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-UseSSL] [<CommonParameters>]
+
+    New-PSSession [-VMId] <Guid[]> [-ConfigurationName <String>] -Credential <PSCredential> [-Name <String[]>]
+    [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    New-PSSession [-ConfigurationName <String>] -Credential <PSCredential> [-Name <String[]>] [-ThrottleLimit <Int32>]
+    -VMName <String[]> [<CommonParameters>]
+
+    New-PSSession [-ConfigurationName <String>] -ContainerId <String[]> [-Name <String[]>] [-RunAsAdministrator]
+    [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    New-PSSession [[-Session] <PSSession[]>] [-EnableNetworkAccess] [-Name <String[]>] [-ThrottleLimit <Int32>]
+    [<CommonParameters>]
+
+
+DESCRIPTION
+    The New-PSSession cmdlet creates a Windows PowerShell session ( PSSession ) on a local or remote computer. When
+    you create a PSSession , Windows PowerShell establishes a persistent connection to the remote computer.
+
+    Use a PSSession to run multiple commands that share data, such as a function or the value of a variable. To run
+    commands in a PSSession , use the Invoke-Command cmdlet. To use the PSSession to interact directly with a remote
+    computer, use the Enter-PSSession cmdlet. For more information, see about_PSSessions
+    (http://go.microsoft.com/fwlink/?LinkID=135181).
+
+    You can run commands on a remote computer without creating a PSSession by using the ComputerName parameters of
+    Enter-PSSession or Invoke-Command . When you use the ComputerName parameter, Windows PowerShell creates a
+    temporary connection that is used for the command and is then closed.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821498
+    Connect-PSSession
+    Disconnect-PSSession
+    Enter-PSSession
+    Exit-PSSession
+    Get-PSSession
+    Invoke-Command
+    Receive-PSSession
+    Remove-PSSession
+
+REMARKS
+    To see the examples, type: "get-help New-PSSession -examples".
+    For more information, type: "get-help New-PSSession -detailed".
+    For technical information, type: "get-help New-PSSession -full".
+    For online help, type: "get-help New-PSSession -online"
+
+
+PS C:\> New-PSSession -ComputerName 192.168.1.253 -Credenetial MSS\mss
+>> TerminatingError(New-PSSession): "A parameter cannot be found that matches parameter name 'Credenetial'."
+New-PSSession : A parameter cannot be found that matches parameter name 'Credenetial'.
+At line:1 char:43
++ New-PSSession -ComputerName 192.168.1.253 -Credenetial MSS\mss
++                                           ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.NewPSSessionCommand
+New-PSSession : A parameter cannot be found that matches parameter name 'Credenetial'.
+At line:1 char:43
++ New-PSSession -ComputerName 192.168.1.253 -Credenetial MSS\mss
++                                           ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [New-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.NewPSSessionCommand
+
+PS C:\> New-PSSession -ComputerName 192.168.1.253 -Credential MSS\mss
+New-PSSession : [192.168.1.253] Connecting to remote server 192.168.1.253 failed with the following error message : The 
+WinRM client cannot process the request. Default authentication may be used with an IP address under the following 
+conditions: the transport is HTTPS or the destination is in the TrustedHosts list, and explicit credentials are 
+provided. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be 
+authenticated. For more information on how to set TrustedHosts run the following command: winrm help config. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName 192.168.1.253 -Credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotUseIPAddress,PSSessionOpenFailed
+New-PSSession : [192.168.1.253] Connecting to remote server 192.168.1.253 failed with the following error message :
+The WinRM client cannot process the request. Default authentication may be used with an IP address under the following
+conditions: the transport is HTTPS or the destination is in the TrustedHosts list, and explicit credentials are
+provided. Use winrm.cmd to configure TrustedHosts. Note that computers in the TrustedHosts list might not be
+authenticated. For more information on how to set TrustedHosts run the following command: winrm help config. For more
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName 192.168.1.253 -Credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotin
+   gTransportException
+    + FullyQualifiedErrorId : CannotUseIPAddress,PSSessionOpenFailed
+PS C:\> winrm help config
+Windows Remote Management Command Line Tool
+
+Configuration for WinRM is managed using the winrm command line or through GPO.
+Configuration includes global configuration for both the client and service.
+
+The WinRM service requires at least one listener to indicate the IP address(es)
+on which to accept WS-Management requests.  For example, if the machine has
+multiple network cards, WinRM can be configured to only accept requests from
+one of the network cards.
+
+Global configuration
+  winrm get winrm/config
+  winrm get winrm/config/client
+  winrm get winrm/config/service
+  winrm enumerate winrm/config/resource
+  winrm enumerate winrm/config/listener
+  winrm enumerate winrm/config/plugin
+  winrm enumerate winrm/config/service/certmapping
+
+Network listening requires one or more listeners.
+Listeners are identified by two selectors: Address and Transport.
+
+Address must be one of:
+  *           - Listen on all IPs on the machine
+  IP:1.2.3.4  - Listen only on the specified IP address
+  MAC:...     - Listen only on IP address for the specified MAC
+
+Note: All listening is subject to the IPv4Filter and IPv6Filter under
+config/service.
+Note: IP may be an IPv4 or IPv6 address.
+
+
+Transport must be one of:
+  HTTP  - Listen for requests on HTTP  (default port is 5985)
+  HTTPS - Listen for requests on HTTPS (default port is 5986)
+
+Note: HTTP traffic by default only allows messages encrypted with
+the Negotiate or Kerberos SSP.
+
+
+When configuring HTTPS, the following properties are used:
+  Hostname - Name of this machine; must match CN in certificate.
+  CertificateThumbprint - hexadecimal thumbprint of certificate appropriate for
+    Server Authentication.
+Note: If only Hostname is supplied, WinRM will try to find an appropriate
+certificate.
+
+Example: To listen for requests on HTTP on all IPs on the machine:
+  winrm create winrm/config/listener?Address=*+Transport=HTTP
+
+Example: To disable a given listener
+  winrm set winrm/config/listener?Address=IP:1.2.3.4+Transport=HTTP @{Enabled="false"}
+
+Example: To enable basic authentication on the client but not the service:
+  winrm set winrm/config/client/auth @{Basic="true"}
+
+Example: To enable Negotiate for all workgroup machines.
+  winrm set winrm/config/client @{TrustedHosts="<local>"}
+
+See also:
+  winrm help uris
+  winrm help aliases
+  winrm help certmapping
+  winrm help input
+  winrm help switches
+PS C:\> New-PSSession -ComputerName 192.168.1.253.mss.local -Credential MSS\mss
+New-PSSession : [192.168.1.253.mss.local] Connecting to remote server 192.168.1.253.mss.local failed with the following 
+error message : WinRM cannot process the request. The following error occurred while using Kerberos authentication: 
+Cannot find the computer 192.168.1.253.mss.local. Verify that the computer exists on the network and that the name 
+provided is spelled correctly. For more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName 192.168.1.253.mss.local -Credential MSS\m ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], 
+PSRemotingTransportException
+    + FullyQualifiedErrorId : NetworkPathNotFound,PSSessionOpenFailed
+New-PSSession : [192.168.1.253.mss.local] Connecting to remote server 192.168.1.253.mss.local failed with the
+following error message : WinRM cannot process the request. The following error occurred while using Kerberos
+authentication: Cannot find the computer 192.168.1.253.mss.local. Verify that the computer exists on the network and
+that the name provided is spelled correctly. For more information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ New-PSSession -ComputerName 192.168.1.253.mss.local -Credential MSS\m ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotin
+   gTransportException
+    + FullyQualifiedErrorId : NetworkPathNotFound,PSSessionOpenFailed
+PS C:\> Enter-PSSession -Computer 'MSSFS01' -Credential MSS\mss
+PS C:\> Enter-PSSession -Computer mssdt03 -credential MSS\mss
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete 
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and 
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer mssdt03 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer mssdt03 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> Enter-PSSession -Computer 'mssdt03' -credential MSS\mss
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete 
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and 
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer 'mssdt03' -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -Computer 'mssdt03' -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> Enter-PSSession -Computer 'mssitdc01' -credential MSS\mss
+PS C:\> Enter-PSSession -computer 'mssdt03' -port 8080 MSS\mss
+>> TerminatingError(Enter-PSSession): "A positional parameter cannot be found that accepts argument 'MSS\mss'."
+Enter-PSSession : A positional parameter cannot be found that accepts argument 'MSS\mss'.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 8080 MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+Enter-PSSession : A positional parameter cannot be found that accepts argument 'MSS\mss'.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 8080 MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Enter-PSSession], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.EnterPSSessionCommand
+
+PS C:\> Enter-PSSession -computer 'mssdt03' -port 8080 -credential MSS\mss
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete 
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and 
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 8080 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 8080 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+
+PS C:\> Enter-PSSession -computer 'mssdt03' -port 80 -credential MSS\mss
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete 
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and 
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 80 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+Enter-PSSession : Connecting to remote server mssdt03 failed with the following error message : WinRM cannot complete
+the operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and
+that a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+At line:1 char:1
++ Enter-PSSession -computer 'mssdt03' -port 80 -credential MSS\mss
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (mssdt03:String) [Enter-PSSession], PSRemotingTransportException
+    + FullyQualifiedErrorId : CreateRemoteRunspaceFailed
+

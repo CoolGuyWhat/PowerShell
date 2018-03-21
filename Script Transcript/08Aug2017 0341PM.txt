@@ -1,0 +1,69 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170808154100
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7824
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\08Aug2017 0341PM.txt
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+PowerShell Profile Loaded.
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd \!Current\
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd \!Current\
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\!Current\' because it does not exist.
+At line:1 char:1
++ cd \!Current\
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\!Current\:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> cd C:\Users\aaron\Documents\WindowsPowerShell\!Current\
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Users\aaron\Documents\WindowsPowerShell\!Current> .\Remote-Details.ps1
+VERBOSE: Connecting to MSSFS01 with Credentials provided
+
+
+PC Name     : MSSFS01
+Domain      : mssit.local
+Description : Microsoft Hyper-V Network Adapter
+IP Address  : 192.168.1.249
+DHCPServer  :
+MACAddress  : 00:15:5D:01:04:02
+
+
+

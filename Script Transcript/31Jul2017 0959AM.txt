@@ -1,0 +1,286 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20170731095920
+Username: MSS\aaron
+RunAs User: MSS\aaron
+Machine: MSSDT04 (Microsoft Windows NT 10.0.15063.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7224
+PSVersion: 5.1.15063.483
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.15063.483
+BuildVersion: 10.0.15063.483
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\aaron\Documents\WindowsPowerShell\Script Transcript\31Jul2017 0959AM.txt
+
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+Local PowerShell Profile Loaded successfully.
+
+Filter Left, Format Right
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -Class {like Win32_Oper*}
+Get-WmiObject : Invalid query "select * from like Win32_Oper*"
+At line:1 char:1
++ Get-WmiObject -Class {like Win32_Oper*}
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from like Win32_Oper*"
+At line:1 char:1
++ Get-WmiObject -Class {like Win32_Oper*}
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> gh Get-WmiObject
+
+NAME
+    Get-WmiObject
+
+SYNOPSIS
+    Gets instances of WMI classes or information about the available classes.
+
+
+SYNTAX
+    Get-WmiObject [-Class] <String> [[-Property] <String[]>] [-Amended] [-AsJob] [-Authentication {Default | None |
+    Connect | Call | Packet | PacketIntegrity | PacketPrivacy | Unchanged}] [-Authority <String>] [-ComputerName
+    <String[]>] [-Credential <PSCredential>] [-DirectRead] [-EnableAllPrivileges] [-Filter <String>] [-Impersonation
+    {Default | Anonymous | Identify | Impersonate | Delegate}] [-Locale <String>] [-Namespace <String>]
+    [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Get-WmiObject [[-Class] <String>] [-Amended] [-AsJob] [-Authentication {Default | None | Connect | Call | Packet |
+    PacketIntegrity | PacketPrivacy | Unchanged}] [-Authority <String>] [-ComputerName <String[]>] [-Credential
+    <PSCredential>] [-EnableAllPrivileges] [-Impersonation {Default | Anonymous | Identify | Impersonate | Delegate}]
+    [-List] [-Locale <String>] [-Namespace <String>] [-Recurse] [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+    Get-WmiObject [-Amended] [-AsJob] [-Authentication {Default | None | Connect | Call | Packet | PacketIntegrity |
+    PacketPrivacy | Unchanged}] [-Authority <String>] [-ComputerName <String[]>] [-Credential <PSCredential>]
+    [-DirectRead] [-EnableAllPrivileges] [-Impersonation {Default | Anonymous | Identify | Impersonate | Delegate}]
+    [-Locale <String>] [-Namespace <String>] -Query <String> [-ThrottleLimit <Int32>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Starting in Windows PowerShell 3.0, this cmdlet has been superseded by
+    Get-CimInstancehttp://technet.microsoft.com/library/jj590758(v=wps.630).aspx.
+
+    The Get-WmiObject cmdlet gets instances of Windows Management Instrumentation (WMI) classes or information about
+    the available WMI classes. To specify a remote computer, use the ComputerName parameter. If the List parameter is
+    specified, the cmdlet gets information about the WMI classes that are available in a specified namespace. If the
+    Query parameter is specified, the cmdlet runs a WMI query language (WQL) statement.
+
+    This cmdlet does not use Windows PowerShell remoting to perform remote operations. You can use the ComputerName
+    parameter of the Get-WmiObject cmdlet even if your computer does not meet the requirements for Windows
+    PowerShellremoting or is not configured for remoting in Windows PowerShell.
+
+    Beginning in Windows PowerShell 3.0, the __Server property of the object that Get-WmiObject returns has a
+    PSComputerName alias. This makes it easier to include the source computer name in output and reports.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821595
+    Get-WSManInstance
+    Invoke-WSManAction
+    New-WSManInstance
+    Remove-WSManInstance
+    Invoke-WmiMethod
+    Remove-WmiObject
+    Set-WmiInstance
+
+REMARKS
+    To see the examples, type: "get-help Get-WmiObject -examples".
+    For more information, type: "get-help Get-WmiObject -detailed".
+    For technical information, type: "get-help Get-WmiObject -full".
+    For online help, type: "get-help Get-WmiObject -online"
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -namespace "root/default" -List
+
+
+   NameSpace: ROOT\default
+
+Name                                Methods              Properties
+----                                -------              ----------
+CIM_Indication                      {}                   {CorrelatedIndications, IndicationFilterName, IndicationIde...
+CIM_ClassIndication                 {}                   {ClassDefinition, CorrelatedIndications, IndicationFilterNa...
+CIM_ClassDeletion                   {}                   {ClassDefinition, CorrelatedIndications, IndicationFilterNa...
+CIM_ClassCreation                   {}                   {ClassDefinition, CorrelatedIndications, IndicationFilterNa...
+CIM_ClassModification               {}                   {ClassDefinition, CorrelatedIndications, IndicationFilterNa...
+CIM_InstIndication                  {}                   {CorrelatedIndications, IndicationFilterName, IndicationIde...
+CIM_InstCreation                    {}                   {CorrelatedIndications, IndicationFilterName, IndicationIde...
+CIM_InstModification                {}                   {CorrelatedIndications, IndicationFilterName, IndicationIde...
+CIM_InstDeletion                    {}                   {CorrelatedIndications, IndicationFilterName, IndicationIde...
+__NotifyStatus                      {}                   {StatusCode}
+__ExtendedStatus                    {}                   {Description, Operation, ParameterInfo, ProviderName...}
+CIM_Error                           {}                   {CIMStatusCode, CIMStatusCodeDescription, ErrorSource, Erro...
+MSFT_WmiError                       {}                   {CIMStatusCode, CIMStatusCodeDescription, error_Category, e...
+MSFT_ExtendedStatus                 {}                   {CIMStatusCode, CIMStatusCodeDescription, error_Category, e...
+__SecurityRelatedClass              {}                   {}
+__Trustee                           {}                   {Domain, Name, SID, SidLength...}
+__NTLMUser9X                        {}                   {Authority, Flags, Mask, Name...}
+__ACE                               {}                   {AccessMask, AceFlags, AceType, GuidInheritedObjectType...}
+__SecurityDescriptor                {}                   {ControlFlags, DACL, Group, Owner...}
+__PARAMETERS                        {}                   {}
+__SystemClass                       {}                   {}
+__ProviderRegistration              {}                   {provider}
+__EventProviderRegistration         {}                   {EventQueryList, provider}
+__ObjectProviderRegistration        {}                   {InteractionType, provider, QuerySupportLevels, SupportsBat...
+__ClassProviderRegistration         {}                   {CacheRefreshInterval, InteractionType, PerUserSchema, prov...
+__InstanceProviderRegistration      {}                   {InteractionType, provider, QuerySupportLevels, SupportsBat...
+__MethodProviderRegistration        {}                   {provider}
+__PropertyProviderRegistration      {}                   {provider, SupportsGet, SupportsPut}
+__EventConsumerProviderRegistration {}                   {ConsumerClassNames, provider}
+__thisNAMESPACE                     {}                   {SECURITY_DESCRIPTOR}
+__NAMESPACE                         {}                   {Name}
+__IndicationRelated                 {}                   {}
+__FilterToConsumerBinding           {}                   {Consumer, CreatorSID, DeliverSynchronously, DeliveryQoS...}
+__EventConsumer                     {}                   {CreatorSID, MachineName, MaximumQueueSize}
+LogFileEventConsumer                {}                   {CreatorSID, Filename, IsUnicode, MachineName...}
+ActiveScriptEventConsumer           {}                   {CreatorSID, KillTimeout, MachineName, MaximumQueueSize...}
+NTEventLogEventConsumer             {}                   {Category, CreatorSID, EventID, EventType...}
+SMTPEventConsumer                   {}                   {BccLine, CcLine, CreatorSID, FromLine...}
+CommandLineEventConsumer            {}                   {CommandLineTemplate, CreateNewConsole, CreateNewProcessGro...
+__AggregateEvent                    {}                   {NumberOfEvents, Representative}
+__TimerNextFiring                   {}                   {NextEvent64BitTime, TimerId}
+__EventFilter                       {}                   {CreatorSID, EventAccess, EventNamespace, Name...}
+__Event                             {}                   {SECURITY_DESCRIPTOR, TIME_CREATED}
+__NamespaceOperationEvent           {}                   {SECURITY_DESCRIPTOR, TargetNamespace, TIME_CREATED}
+__NamespaceModificationEvent        {}                   {PreviousNamespace, SECURITY_DESCRIPTOR, TargetNamespace, T...
+__NamespaceDeletionEvent            {}                   {SECURITY_DESCRIPTOR, TargetNamespace, TIME_CREATED}
+__NamespaceCreationEvent            {}                   {SECURITY_DESCRIPTOR, TargetNamespace, TIME_CREATED}
+__ClassOperationEvent               {}                   {SECURITY_DESCRIPTOR, TargetClass, TIME_CREATED}
+__ClassDeletionEvent                {}                   {SECURITY_DESCRIPTOR, TargetClass, TIME_CREATED}
+__ClassModificationEvent            {}                   {PreviousClass, SECURITY_DESCRIPTOR, TargetClass, TIME_CREA...
+__ClassCreationEvent                {}                   {SECURITY_DESCRIPTOR, TargetClass, TIME_CREATED}
+__InstanceOperationEvent            {}                   {SECURITY_DESCRIPTOR, TargetInstance, TIME_CREATED}
+__InstanceCreationEvent             {}                   {SECURITY_DESCRIPTOR, TargetInstance, TIME_CREATED}
+__MethodInvocationEvent             {}                   {Method, Parameters, PreCall, SECURITY_DESCRIPTOR...}
+__InstanceModificationEvent         {}                   {PreviousInstance, SECURITY_DESCRIPTOR, TargetInstance, TIM...
+__InstanceDeletionEvent             {}                   {SECURITY_DESCRIPTOR, TargetInstance, TIME_CREATED}
+__TimerEvent                        {}                   {NumFirings, SECURITY_DESCRIPTOR, TIME_CREATED, TimerId}
+__ExtrinsicEvent                    {}                   {SECURITY_DESCRIPTOR, TIME_CREATED}
+__SystemEvent                       {}                   {SECURITY_DESCRIPTOR, TIME_CREATED}
+__EventDroppedEvent                 {}                   {Event, IntendedConsumer, SECURITY_DESCRIPTOR, TIME_CREATED}
+__EventQueueOverflowEvent           {}                   {CurrentQueueSize, Event, IntendedConsumer, SECURITY_DESCRI...
+__QOSFailureEvent                   {}                   {ErrorCode, ErrorDescription, Event, IntendedConsumer...}
+__ConsumerFailureEvent              {}                   {ErrorCode, ErrorDescription, ErrorObject, Event...}
+RegistryEvent                       {}                   {SECURITY_DESCRIPTOR, TIME_CREATED}
+RegistryKeyChangeEvent              {}                   {Hive, KeyPath, SECURITY_DESCRIPTOR, TIME_CREATED}
+RegistryTreeChangeEvent             {}                   {Hive, RootPath, SECURITY_DESCRIPTOR, TIME_CREATED}
+RegistryValueChangeEvent            {}                   {Hive, KeyPath, SECURITY_DESCRIPTOR, TIME_CREATED...}
+__EventGenerator                    {}                   {}
+__TimerInstruction                  {}                   {SkipIfPassed, TimerId}
+__AbsoluteTimerInstruction          {}                   {EventDateTime, SkipIfPassed, TimerId}
+__IntervalTimerInstruction          {}                   {IntervalBetweenEvents, SkipIfPassed, TimerId}
+__Provider                          {}                   {Name}
+__Win32Provider                     {}                   {ClientLoadableCLSID, CLSID, Concurrency, DefaultMachineNam...
+__CIMOMIdentification               {}                   {SetupDateTime, VersionCurrentlyRunning, VersionUsedToCreat...
+__AdapStatus                        {}                   {LastStartTime, LastStopTime, Status}
+__SystemSecurity                    {GetSD, GetSecuri... {}
+StdRegProv                          {CreateKey, Delet... {}
+SystemRestoreConfig                 {}                   {DiskPercent, MyKey, RPGlobalInterval, RPLifeInterval...}
+SystemRestore                       {CreateRestorePoi... {CreationTime, Description, EventType, RestorePointType...}
+
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class *
+Get-WmiObject : Invalid query "select * from *"
+At line:1 char:1
++ Get-WmiObject -class *
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from *"
+At line:1 char:1
++ Get-WmiObject -class *
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class Win32* | Select-Object -Property *
+Get-WmiObject : Invalid query "select * from Win32*"
+At line:1 char:1
++ Get-WmiObject -class Win32* | Select-Object -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from Win32*"
+At line:1 char:1
++ Get-WmiObject -class Win32* | Select-Object -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class Win32_ | Select-Object -Property *
+Get-WmiObject : Invalid class "Win32_"
+At line:1 char:1
++ Get-WmiObject -class Win32_ | Select-Object -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid class "Win32_"
+At line:1 char:1
++ Get-WmiObject -class Win32_ | Select-Object -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidType: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class *Win32_* 
+Get-WmiObject : Invalid query "select * from *Win32_*"
+At line:1 char:1
++ Get-WmiObject -class *Win32_*
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from *Win32_*"
+At line:1 char:1
++ Get-WmiObject -class *Win32_*
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class *Win32_* | select -Property *
+Get-WmiObject : Invalid query "select * from *Win32_*"
+At line:1 char:1
++ Get-WmiObject -class *Win32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from *Win32_*"
+At line:1 char:1
++ Get-WmiObject -class *Win32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class Win*32_* | select -Property *
+Get-WmiObject : Invalid query "select * from Win*32_*"
+At line:1 char:1
++ Get-WmiObject -class Win*32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from Win*32_*"
+At line:1 char:1
++ Get-WmiObject -class Win*32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
+PS C:\Users\aaron\Documents\WindowsPowerShell> Get-WmiObject -class Win32_* | select -Property *
+Get-WmiObject : Invalid query "select * from Win32_*"
+At line:1 char:1
++ Get-WmiObject -class Win32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+Get-WmiObject : Invalid query "select * from Win32_*"
+At line:1 char:1
++ Get-WmiObject -class Win32_* | select -Property *
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WmiObject], ManagementException
+    + FullyQualifiedErrorId : GetWMIManagementException,Microsoft.PowerShell.Commands.GetWmiObjectCommand
+
