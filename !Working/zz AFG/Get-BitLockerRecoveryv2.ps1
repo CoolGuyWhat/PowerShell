@@ -27,6 +27,7 @@
     Date: 27/09/2017 | Skinned back script to barebones and Tested. Formatted. Running correctly.
     Date: 28/09/2017 | Added an Alias for the function
     Date:         '' | Trimmed the Outputs so there aren't huge spaces between the outputs
+    Date: 22/03/2018 | Discovered that the -Laps wasnt retreving the Attribte Correctly. Reconfigured to Get-ADObject to work properly.
 
 
     ############
@@ -63,9 +64,9 @@
     .PARAMETER Laps
     Switch Parameter if this is in the cmdlet, it will output the LAPS Password as well with the Output (See Example 2)
     .EXAMPLE 1
-    Get-BitLockerRecovery -PC 'Company-PC100'
+    Get-BitLockerRecovery 'Company-PC100'
     .EXAMPLE 2
-    Get-BitLockerRecovery -PC 'Company-PC101' -Laps
+    Get-BLR 'Company-PC101' -Laps
 #>
 
 function Get-BitLockerRecovery
@@ -77,9 +78,9 @@ function Get-BitLockerRecovery
     # PC Name of Target Computer
     [Parameter(Mandatory = $true,
                ValueFromPipeline = $true,
-               ValueFromPipelineByPropertyName = $true)] 
+               ValueFromPipelineByPropertyName = $true)]
     [string]$PC,
-        
+
     # Switch to retrieve LAPS Key if specified in cmdlet
     [Parameter(Mandatory = $false)]
     [switch]$Laps
@@ -90,28 +91,28 @@ function Get-BitLockerRecovery
     Import-Module ActiveDirectory
 
     # Get-ADObject needs the Computers Distinguished Name to get the Properties
-    $ComputerName = Get-ADComputer -Identity $PC     
+    $ComputerName = Get-ADComputer -Identity $PC
     $FullComputerName = $ComputerName.DistinguishedName
   }
-    
+
   Process
   {
     # Get-ADComputer... doesn't find the  correct AD Attribute. So I've had to use Get-ADObject which can filter through more thoroughly.
     $BLKey = Get-ADObject -Filter {objectclass -eq 'msFVE-RecoveryInformation'} -SearchBase $FullComputerName -Properties 'msFVE-RecoveryPassword'
-    
+
     # This adds ~5sec to the execution time of the script investigate better performance options
     # $OSIP = Get-ADComputer -Identity WA3425 -Property * | Select-Object -Property OperatingSystem,OperatingSystemVersion,IPv4Address
-    
+
     if($Laps)
     {
       # Was able to get the Property using Get-ADComputer
-      $LAPSKey = Get-ADComputer -Identity $PC -Properties 'ms-Mcs-AdmPwd'
+      $LAPSKey = Get-ADObject -Filter * -SearchBase $FullComputerName -Properties 'ms-Mcs-AdmPwd'
     }
   }
   End
   {
     If($Laps)
-    {
+    {`
       # Format for LAPSKey if the switch is active
       $OutputLAPSKey = $LAPSKey | Select-Object -Property @{Name='LAPS Password';Expression={$_.'ms-Mcs-AdmPwd'}} | Format-List | Out-String
       $OutputLAPSKey = $OutputLAPSKey.trim()
